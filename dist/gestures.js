@@ -23,3 +23,8 @@ function swipePageStep(dx,dy,duration,direction){
  if(duration>1200||Math.abs(dx)<60||Math.abs(dx)<Math.abs(dy)*1.4)return 0;
  return (dx<0?1:-1)*(direction==='rtl'?-1:1);
 }
+function tapPageStep(x,left,width,direction){
+ if(!Number.isFinite(x)||!Number.isFinite(width)||width<=0||x<left||x>left+width)return 0;
+ const step=x<left+width/2?-1:1;
+ return direction==='rtl'?-step:step;
+}
