@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="105" fill="#a83c35"/><text x="256" y="345" text-anchor="middle" fill="#fffdf8" font-size="270" font-family="serif">赤</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="105" fill="#a83c35"/><path d="M114 385 224 119h64l110 266h-65l-21-57H200l-21 57zm106-111h72l-36-98z" fill="#fffdf8"/></svg>
