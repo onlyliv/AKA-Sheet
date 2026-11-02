@@ -1,5 +1,6 @@
 /* Release history is backfilled from the development conversation before 0.9.0. */
-const APP_RELEASE={version:'0.9.0',history:[
+const APP_RELEASE={version:'0.10.0-beta.1',history:[
+ {version:'0.10.0-beta.1',date:'2026-11-02',kind:'베타 · 기능 실험',changes:['안정판 0.9.0과 분리된 beta/local-translation 브랜치.','선택 영역 OCR·일본어 원문 수정·한국어 로컬 번역 실험.','Tesseract 경량/정밀 설정과 M2M100 엔진 선택.','NLLB는 실험용·비상업으로 분리하고 추후 삭제 검토.','번역 모델은 최초 다운로드 허용 후 기기에서 실행.','품질·iPhone 실행·오프라인 지속성 검증 전이며 안정판에 병합하지 않음.']},
  {version:'0.9.0',date:'2026-11-02',kind:'기능 추가',changes:['메뉴에 개발 로그와 현재 버전 표시 추가.','메이저·마이너·버그 픽스 기준을 문서화.','한 페이지 보기에서도 책 방향 선택과 클릭·스와이프 방향 적용.']},
  {version:'0.8.0',date:'2026-11-02',kind:'기능 추가',changes:['책 화면 좌우 50% 영역 클릭·탭으로 이전·다음 페이지 이동.','책 방향에 따른 클릭·탭 이동 반전.','EPUB의 보안 격리를 유지하는 투명 입력 영역 적용.','드래그·스크롤·스와이프 후 중복 클릭 방지.']},
  {version:'0.7.1',date:'2026-11-02',kind:'버그 픽스',changes:['PC 연속 휠 입력이 멈출 때까지 무시되던 문제 수정.','로딩 중 입력 이후 스크롤 무응답 수정.','작은 휠 입력 누적과 방향 반동 처리 개선.']},
