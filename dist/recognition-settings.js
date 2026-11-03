@@ -1,9 +1,9 @@
 /* One session-wide recognition preference. Saving defaults never stores model consent. */
 (function(root){
- const writings=['horizontal','vertical','english','korean'],names={horizontal:'일본어 · 가로',vertical:'일본어 · 세로',english:'영어',korean:'한국어'},subscribers=new Set();
+ const writings=['auto','horizontal','vertical','english','korean'],names={auto:'자동 추정',horizontal:'일본어 · 가로',vertical:'일본어 · 세로',english:'영어',korean:'한국어'},subscribers=new Set();
  const saved=AppSettings.read(),legacy=k=>{try{return localStorage.getItem('akai.translation.'+k)}catch{return null}},initial=saved.ocr||saved.translation||{};
- let state={writing:initial.writing||legacy('writing')||'vertical',ocr:(initial.ocr||legacy('ocr'))==='paddle'?'paddle':'best'};
- if(!writings.includes(state.writing))state.writing='vertical';if(!['best','paddle'].includes(state.ocr))state.ocr='best';
+ let state={writing:initial.writing||legacy('writing')||'auto',ocr:(initial.ocr||legacy('ocr'))==='paddle'?'paddle':'best'};
+ if(!writings.includes(state.writing))state.writing='auto';if(!['best','paddle'].includes(state.ocr))state.ocr='best';
  const ids=['selectionWriting','betaWriting','betaDetailWriting','settingsWriting'];
  function sync(){for(const id of ids){const e=document.getElementById(id);if(e)e.value=state.writing}const model=document.getElementById('betaOcrEngine');if(model)model.value=state.ocr}
  function read(){return {...state}}
