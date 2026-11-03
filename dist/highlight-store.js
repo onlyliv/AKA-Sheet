@@ -9,6 +9,7 @@
  async function transact(mode,fn){const d=await db();return new Promise((resolve,reject)=>{const tx=d.transaction('marks',mode);let value;fn(tx.objectStore('marks'),v=>value=v);tx.oncomplete=()=>resolve(value);tx.onerror=tx.onabort=()=>reject(tx.error||Error('하이라이트를 저장하지 못했습니다.'))})}
  const list=book=>transact('readonly',(s,set)=>{const q=s.index('book').getAll(book);q.onsuccess=()=>set(q.result)});
  async function put(r){if(!valid(r))throw Error('하이라이트 정보가 올바르지 않습니다.');await transact('readwrite',s=>s.put(r));return r}
+ async function patch(id,book,values){return transact('readwrite',(s,set)=>{const q=s.get(id);q.onsuccess=()=>{const old=q.result;if(!old||old.book!==book){set(null);return}const next={...old,...values};if(!valid(next))throw Error('형광펜 정보가 올바르지 않습니다.');s.put(next);set(next)}})}
  const remove=id=>transact('readwrite',s=>s.delete(id));
- root.HighlightStore={colors,clip,normalize,project,list,put,remove,valid};
+ root.HighlightStore={colors,clip,normalize,project,list,put,patch,remove,valid};
 })(globalThis);
