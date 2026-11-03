@@ -1,0 +1,11 @@
+/* Optional local PaddleOCR assets. Preparation is explicit; inference never fetches weights. */
+(function(root){
+ const CACHE='akai-paddle-024',base='models/paddle/';
+ const models=['PP-OCRv5_mobile_det','PP-OCRv5_mobile_rec','korean_PP-OCRv5_mobile_rec'];
+ const paths=[...models.map(n=>base+n+'.tar'),'vendor/paddle/sdk.mjs','vendor/paddle/opencv.mjs','vendor/paddle/clipper.mjs','vendor/paddle/yaml.mjs','vendor/paddle/ort.mjs','vendor/paddle/ort-wasm-simd-threaded.mjs','vendor/paddle/ort-wasm-simd-threaded.wasm'];
+ const url=p=>new URL(p,location.href).href;
+ async function status(){if(!('caches'in root))return {id:'paddle',ready:false,count:0,bytes:0,state:'저장소 미지원'};const cache=await caches.open(CACHE);let count=0,bytes=0;for(const p of paths){const r=await cache.match(url(p));if(r){count++;bytes+=Number(r.headers.get('content-length'))||0}}return {id:'paddle',ready:count===paths.length,count,bytes,state:count===paths.length?'사용 가능':count?'일부 준비됨':'미준비'}}
+ async function prepare(signal,progress=()=>{}){const cache=await caches.open(CACHE);for(let i=0;i<paths.length;i++){if(signal?.aborted)throw new DOMException('취소됨','AbortError');const p=paths[i],u=url(p);if(await cache.match(u))continue;progress(`PaddleOCR 준비 · ${i+1}/${paths.length}`);const response=await fetch(u,{signal});if(!response.ok)throw Error('파일 다운로드 실패: '+p);const bytes=await response.arrayBuffer();if(signal?.aborted)throw new DOMException('취소됨','AbortError');if(bytes.byteLength<100)throw Error('잘못된 실행 파일: '+p);if(p.endsWith('.tar')&&new TextDecoder().decode(bytes.slice(257,262))!=='ustar')throw Error('잘못된 모델 파일: '+p);await cache.put(u,new Response(bytes,{headers:{'content-type':response.headers.get('content-type')||'application/octet-stream','content-length':String(bytes.byteLength)}}))}return status()}
+ async function remove(){await caches.delete(CACHE);for(const name of await caches.keys()){if(!name.startsWith('akai-beta-'))continue;const cache=await caches.open(name);for(const p of paths)await cache.delete(url(p))}}
+ root.PaddleModels={CACHE,models,paths,status,prepare,remove};
+})(globalThis);
