@@ -75,3 +75,6 @@ body[data-reader-mode="select"] #viewport{padding-bottom:0}body[data-reader-mode
 .sheet-colors [data-sheet="red"]{--picker:#a83c35;--picker-soft:#f6e8e4}.sheet-colors [data-sheet="green"]{--picker:#357552;--picker-soft:#e4f0e7}.sheet-colors [data-sheet="blue"]{--picker:#356fad;--picker-soft:#e6edf8}
 .sheet-colors [aria-pressed="true"]{border-color:var(--picker);background:var(--picker-soft);box-shadow:inset 0 -2px var(--picker)}
 @media(max-width:600px){.brand>b.brand-mark{width:28px;height:28px}}
+
+.text-selection-menu #pageKind{background:var(--sheet-soft);color:var(--sheet-accent)}
+#quickTranslation>summary #openTranslation{background:var(--sheet);color:var(--sheet-ink);border-color:var(--sheet-border)}
