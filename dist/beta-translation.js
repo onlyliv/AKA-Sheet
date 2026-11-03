@@ -30,7 +30,7 @@ const BetaTranslation=(()=>{
    message('브라우저 내장 번역 엔진과 언어 팩을 준비하고 있습니다.');let t;try{t=await Translator.create({sourceLanguage:pair.source,targetLanguage:pair.target,monitor(m){m.addEventListener('downloadprogress',e=>{if(epoch===runEpoch)message('내장 언어 팩 준비 · '+Math.round(e.loaded*100)+'%')})}})}catch(e){throw Error('브라우저 내장 번역을 준비하지 못했습니다. 선택한 언어 조합의 언어 팩 지원·다운로드 상태를 확인하거나 M2M100·NLLB를 선택해 주세요.')}nativeTranslator=t;
    try{const chunks=TranslationText.chunks(text,140,pair.source);const parts=[];for(let i=0;i<chunks.length;i++){if(epoch!==runEpoch)throw Error('실행 취소');message(`내장 번역 중 · ${i+1}/${chunks.length} 문장`);const result=await t.translate(chunks[i]);if(!result?.trim())throw Error('빈 번역 결과가 반환되었습니다.');parts.push(result.trim())}output=parts.join('\n')}finally{if(nativeTranslator===t)nativeTranslator=null;t.destroy()}
   }else{
-   if(!translateWorker)translateWorker=new Worker('./translation-worker.js?v=0.20.0-beta.1',{type:'module'});
+   if(!translateWorker)translateWorker=new Worker('./translation-worker.js?v=0.21.0-beta.1',{type:'module'});
    const worker=translateWorker,id=++job,task=createTranslationTask(worker,{id,engine,text,sourceLanguage:pair.source,targetLanguage:pair.target,download:false},t=>{if(epoch===runEpoch)message(t)},{onWarning:t=>{warning=t},onPartial:d=>{if(epoch===runEpoch)message(`번역 중 · ${d.done}/${d.total} 문장 완료. 이전 결과는 완료될 때까지 유지합니다.`)}});pendingReject=()=>task.cancel();
    try{output=await task.promise}catch(e){worker.terminate();if(translateWorker===worker)translateWorker=null;throw e}
   }
