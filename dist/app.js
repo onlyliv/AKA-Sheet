@@ -32,13 +32,13 @@ async function render(){if(busy)return;busy=true;globalThis.ReaderSelection?.res
 async function open(file){if(!file||busy)return;busy=true;status('파일을 여는 중입니다…');let url;try{let newPdf=null,newImg=null,newEpub=null;if(/\.epub$/i.test(file.name)||file.type==='application/epub+zip'){newEpub=await LocalEpub.load(file);}else if(file.type==='application/pdf'||/\.pdf$/i.test(file.name)){newPdf=await pdfjsLib.getDocument({data:new Uint8Array(await file.arrayBuffer()),isEvalSupported:false}).promise;}else if(/^image\//.test(file.type)){url=URL.createObjectURL(file);newImg=await new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(Error('이미지를 읽을 수 없습니다. PNG 또는 JPEG로 변환해 주세요.'));i.src=url});}else throw Error('EPUB, PDF, PNG, JPEG, WebP 파일을 선택해 주세요.');globalThis.ReaderSelection?.documentChanged();if(pdf)await pdf.destroy();if(epubSecond){epubSecond.destroy();epubSecond=null;}if(epub)epub.destroy();if(imageBook){imageBook.dispose();imageBook=null}epub=newEpub;pdf=newPdf;img=newImg;canvas.hidden=!!epub;total=epub?epub.chapters.length:pdf?pdf.numPages:1;fileKey=file.name+':'+file.size+':'+file.lastModified;page=Math.min(total,Math.max(1,Number(prefs('page:'+fileKey))||1));$('filename').textContent=file.name;zoom=1;if(globalThis.Highlights)await Highlights.load(await Highlights.identify(file));applySheetDefaults(false);}catch(e){status(e.name==='PasswordException'?'암호가 걸린 PDF입니다. 암호를 해제한 사본을 열어 주세요.':'파일을 열지 못했습니다: '+e.message);return}finally{if(url)URL.revokeObjectURL(url);busy=false;$('file').value=''}await render()}
 function positionPages(bottom){const outer=$('viewport');outer.scrollTop=bottom?outer.scrollHeight:0;for(const book of [epub,epubSecond]){const d=book?.frame.contentDocument;if(d){const e=d.scrollingElement;const w=book.frame.contentWindow;w.scrollTo(w.scrollX,bottom?e.scrollHeight:0)}}}
 const wheelGesture=new WheelPageGesture();
-function turnPages(step,bottom=false){if(globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect())return false;if(busy||Date.now()<scrollLock||total<2)return false;const target=Math.max(1,page+step*viewCount);if((step<0&&page<=1)||target>total)return false;go(target,bottom);return true}
+function turnPages(step,bottom=false){if(globalThis.Notes?.isActive()||globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect())return false;if(busy||Date.now()<scrollLock||total<2)return false;const target=Math.max(1,page+step*viewCount);if((step<0&&page<=1)||target>total)return false;go(target,bottom);return true}
 function atVerticalEdge(scroller,step){const top=Math.max(0,scroller.scrollTop),max=Math.max(0,scroller.scrollHeight-scroller.clientHeight);return step>0?top>=max-3:top<=3}
 function epubScroller(e){const x=e.clientX??e.touches?.[0]?.clientX??0;const book=[epub,epubSecond].find(b=>{if(!b)return false;const r=b.frame.getBoundingClientRect();return x>=r.left&&x<=r.right})||epub;return book?.frame.contentDocument.scrollingElement||$('viewport')}
 function bindPageScroll(target,getScroller){
  let touch=null;
  target.addEventListener('wheel',e=>{
-  if(e.ctrlKey||globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect())return;
+  if(e.ctrlKey||globalThis.Notes?.isActive()||globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect())return;
   const s=getScroller(e),overlay=target===$('epubInput');
   if(Math.abs(e.deltaY)<=Math.abs(e.deltaX)){if(overlay){$('viewport').scrollLeft+=e.deltaX;if(e.cancelable)e.preventDefault()}return;}
   tapSuppressedUntil=Date.now()+250;
@@ -51,7 +51,7 @@ function bindPageScroll(target,getScroller){
   if(turn)turnPages(turn,turn<0);
  },{passive:false});
  target.addEventListener('touchstart',e=>{
-  if(globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect()||e.touches.length!==1){touch=null;return}
+  if(globalThis.Notes?.isActive()||globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect()||e.touches.length!==1){touch=null;return}
   const t=e.touches[0],s=getScroller(e);
   touch={id:t.identifier,x:t.clientX,y:t.clientY,time:Date.now(),scroller:s,lastX:t.clientX,lastY:t.clientY,top:atVerticalEdge(s,-1),bottom:atVerticalEdge(s,1)};
  },{passive:true});
@@ -77,14 +77,14 @@ function bindPageTap(target,frame=null){
  let press=null;
  const scroller=()=>frame?frame.contentDocument.scrollingElement:$('viewport');
  target.addEventListener('mousedown',e=>{
-  if(globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect()||e.button!==0){press=null;return}
+  if(globalThis.Notes?.isActive()||globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect()||e.button!==0){press=null;return}
   if(e.target.closest?.('button,input,select,textarea,a[href],summary,[contenteditable="true"]'))return;
   const s=scroller();press={id:e.pointerId,x:e.clientX,y:e.clientY,time:Date.now(),top:s.scrollTop,left:s.scrollLeft,moved:false};
  },{passive:true});
  target.addEventListener('mousemove',e=>{if(press&&Math.hypot(e.clientX-press.x,e.clientY-press.y)>12)press.moved=true},{passive:true});
  target.addEventListener('pointercancel',()=>{press=null},{passive:true});
  target.addEventListener('click',e=>{
-  const start=press;press=null;if(globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect())return;if(!start||start.moved||Date.now()-start.time>700||Date.now()<tapSuppressedUntil)return;
+  const start=press;press=null;if(globalThis.Notes?.isActive()||globalThis.Highlights?.isActive()||globalThis.ReaderSelection?.isSelect())return;if(!start||start.moved||Date.now()-start.time>700||Date.now()<tapSuppressedUntil)return;
   const s=scroller();if(Math.hypot(e.clientX-start.x,e.clientY-start.y)>12||Math.abs(s.scrollTop-start.top)>3||Math.abs(s.scrollLeft-start.left)>3)return;
   const selection=frame?frame.contentWindow.getSelection():window.getSelection();if(selection&&!selection.isCollapsed)return;
   const view=$('viewport').getBoundingClientRect();
