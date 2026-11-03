@@ -66,3 +66,12 @@ body[data-reader-mode="select"] #viewport{padding-bottom:0}body[data-reader-mode
 #hideAll{font-size:11px}.sheet-actions button[aria-pressed="true"],#toggle[aria-pressed="true"],#hideAll[aria-pressed="true"]{background:var(--sheet);color:white;border-color:var(--sheet)}#toggle[aria-pressed="false"],#hideAll[aria-pressed="false"]{background:transparent;color:#343e35;border-color:#d8dcd2}.default-sheet-colors{border:0;padding:0;display:flex;gap:16px;margin:18px 0}.default-sheet-colors legend{margin-bottom:10px;font-size:12px}#highlightStatus:empty{display:none}
 
 .sheet-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.sheet-actions #toggle,.sheet-actions #hideAll{font-size:11px;min-height:36px;line-height:1.5;padding:7px 3px;white-space:nowrap}
+
+/* Combined light-primary theme; sheet and annotation masking retain their own RGB values. */
+.brand>b.brand-mark{display:flex;align-items:center;justify-content:center;flex:none;background:var(--sheet);color:var(--sheet-ink);border:1px solid var(--sheet-border);padding:2px;width:34px;height:34px;border-radius:7px}
+.brand-mark i{display:block;width:100%;height:100%;background:currentColor;-webkit-mask:url('logo-pencil.png') center/contain no-repeat;mask:url('logo-pencil.png') center/contain no-repeat}
+#openBook,.quick-primary,.sheet-actions button[aria-pressed="true"],#toggle[aria-pressed="true"],#hideAll[aria-pressed="true"]{background:var(--sheet);color:var(--sheet-ink);border-color:var(--sheet-border)}
+.study-sheet #badge{color:var(--sheet-accent);background:var(--sheet-soft)}
+.sheet-colors [data-sheet="red"]{--picker:#a83c35;--picker-soft:#f6e8e4}.sheet-colors [data-sheet="green"]{--picker:#357552;--picker-soft:#e4f0e7}.sheet-colors [data-sheet="blue"]{--picker:#356fad;--picker-soft:#e6edf8}
+.sheet-colors [aria-pressed="true"]{border-color:var(--picker);background:var(--picker-soft);box-shadow:inset 0 -2px var(--picker)}
+@media(max-width:600px){.brand>b.brand-mark{width:28px;height:28px}}
