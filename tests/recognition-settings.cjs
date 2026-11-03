@@ -8,4 +8,6 @@ api.save();assert.equal(scope.AppSettings.read().ocr.writing,'korean');assert.eq
 vm.runInContext(fs.readFileSync('dist/recognition-settings.js','utf8'),scope);assert.equal(scope.RecognitionSettings.read().writing,'korean');assert.equal(scope.RecognitionSettings.read().ocr,'paddle');
 console.log('전역 OCR 이관·네 메뉴 언어 동기화·세션/기본값 분리·동의 미저장·재실행 복원 검사 통과');
 
-settings=scope.AppSettings.read();settings.ocr={writing:'vertical',ocr:'fast'};scope.AppSettings.write(settings);assert.equal(scope.AppSettings.read().ocr.ocr,'best');
+settings=scope.AppSettings.read();settings.ocr={writing:'vertical',ocr:'fast'};scope.AppSettings.write(settings);assert.equal(scope.AppSettings.read().ocr.ocr,'fast');
+
+settings=scope.AppSettings.read();settings.ocr=null;settings.translation=null;scope.AppSettings.write(settings);vm.runInContext(fs.readFileSync('dist/recognition-settings.js','utf8'),scope);assert.equal(scope.RecognitionSettings.read().ocr,'paddle');
