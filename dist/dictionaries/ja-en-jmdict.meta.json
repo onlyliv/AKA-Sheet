@@ -1,0 +1,17 @@
+{
+  "id": "ja-en-jmdict",
+  "source": "ja",
+  "target": "en",
+  "label": "JMdict · EDRDG",
+  "version": "2026-11-04",
+  "file": "dictionaries/ja-en-jmdict.jsonl.gz",
+  "bytes": 9484018,
+  "sha256": "efc72cd0fbd8e4353cbf9b90c09cf26d39d3fe166edb4f155afcbe04aedf2ebd",
+  "entries": 219015,
+  "upstream": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+  "page": "https://www.edrdg.org/jmdict/j_jmdict.html",
+  "edition": "jmdict",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://www.edrdg.org/edrdg/licence.html",
+  "textBytes": 42005550
+}

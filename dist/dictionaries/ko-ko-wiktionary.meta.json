@@ -1,0 +1,18 @@
+{
+  "id": "ko-ko-wiktionary",
+  "source": "ko",
+  "target": "ko",
+  "label": "Wiktionary · Kaikki",
+  "version": "2026-11-04",
+  "file": "dictionaries/ko-ko-wiktionary.jsonl.gz",
+  "bytes": 2880595,
+  "sha256": "c56733628ee5cf2253edc350f8e3c29aaa12e223ba6237bcc765a81411ac9c6d",
+  "entries": 88244,
+  "upstream": "https://kaikki.org/kowiktionary/%ED%95%9C%EA%B5%AD%EC%96%B4/kaikki.org-dictionary-%ED%95%9C%EA%B5%AD%EC%96%B4.jsonl",
+  "page": "https://kaikki.org/kowiktionary/%ED%95%9C%EA%B5%AD%EC%96%B4/index.html",
+  "edition": "ko",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rawBytes": 161543037,
+  "textBytes": 12167196
+}

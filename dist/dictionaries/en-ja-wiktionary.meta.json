@@ -1,0 +1,18 @@
+{
+  "id": "en-ja-wiktionary",
+  "source": "en",
+  "target": "ja",
+  "label": "Wiktionary · Kaikki",
+  "version": "2026-11-04",
+  "file": "dictionaries/en-ja-wiktionary.jsonl.gz",
+  "bytes": 1938519,
+  "sha256": "6dad137aa3d445df65d84da40f4d7bc3f51f64ea5c24d2e0f13bbf7a60964f1d",
+  "entries": 73002,
+  "upstream": "https://kaikki.org/jawiktionary/%E8%8B%B1%E8%AA%9E/kaikki.org-dictionary-%E8%8B%B1%E8%AA%9E.jsonl",
+  "page": "https://kaikki.org/jawiktionary/%E8%8B%B1%E8%AA%9E/index.html",
+  "edition": "ja",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rawBytes": 64564285,
+  "textBytes": 9113729
+}

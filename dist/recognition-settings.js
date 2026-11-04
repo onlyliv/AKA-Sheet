@@ -4,7 +4,7 @@
  const saved=AppSettings.read(),legacy=k=>{try{return localStorage.getItem('akai.translation.'+k)}catch{return null}},initial=saved.ocr||saved.translation||{};
  let state={writing:initial.writing||legacy('writing')||'auto',ocr:initial.ocr||legacy('ocr')||'paddle'};
  if(!writings.includes(state.writing))state.writing='auto';if(!['fast','best','paddle'].includes(state.ocr))state.ocr='paddle';
- const ids=['selectionWriting','betaWriting','betaDetailWriting','settingsWriting'];
+ const ids=['selectionWriting','betaWriting','betaDetailWriting','settingsWriting','dictWriting'];
  function sync(){for(const id of ids){const e=document.getElementById(id);if(e)e.value=state.writing}const model=document.getElementById('betaOcrEngine');if(model)model.value=state.ocr}
  function read(){return {...state}}
  function set(patch){const next={...state,...patch};if(!writings.includes(next.writing)||!['fast','best','paddle'].includes(next.ocr))return;if(next.writing===state.writing&&next.ocr===state.ocr){sync();return}state=next;sync();for(const fn of subscribers)fn(read())}

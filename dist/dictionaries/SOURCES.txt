@@ -1,0 +1,65 @@
+AKA Sheet offline dictionary packs — 2026-11-04
+
+Wiktionary text: copyright Wiktionary contributors. Extracted by Kaikki.org / Wiktextract.
+Distributed and adapted under CC BY-SA 4.0 International. Full legal code: LICENSE.txt.
+The derived JSONL packs are also CC BY-SA 4.0. Changes: select language/fields, flatten glosses, add lookup keys, gzip compression. No audio, illustrations or quoted usage examples are included.
+Each result links to the original word page, with its contributor history. Entries may have errors, omissions or incomplete readings. These are pinned snapshots from Kaikki's postprocessed language downloads (deprecated by upstream); regeneration may require migrating the builder to raw Wiktextract editions.
+
+JMdict Japanese/English text (when installed): copyright James William BREEN and the Electronic Dictionary Research and Development Group. CC BY-SA 4.0. Usage: https://www.edrdg.org/edrdg/licence.html
+Changes: convert XML to compact JSONL, index readings, retain sense restrictions as display text.
+EDRDG requires source acknowledgement and a regular update procedure. Run build-jmdict.py and finalize-dictionaries.py to refresh the published pack, including its version/hash. Review at least monthly.
+
+Rebuild: scripts/build-dictionaries.py; scripts/build-jmdict.py; scripts/finalize-dictionaries.py
+No dictionary is fetched automatically by the app. Installed packs remain available offline, independent of OCR/translation engine caches and user annotations.
+
+Sources:
+
+en-en-wiktionary
+Original: https://kaikki.org/dictionary/English/index.html
+Data: https://kaikki.org/dictionary/English/kaikki.org-dictionary-English.jsonl
+Retrieved: 2026-11-04
+
+en-ja-wiktionary
+Original: https://kaikki.org/jawiktionary/%E8%8B%B1%E8%AA%9E/index.html
+Data: https://kaikki.org/jawiktionary/%E8%8B%B1%E8%AA%9E/kaikki.org-dictionary-%E8%8B%B1%E8%AA%9E.jsonl
+Retrieved: 2026-11-04
+
+en-ko-wiktionary
+Original: https://kaikki.org/kowiktionary/%EC%98%81%EC%96%B4/index.html
+Data: https://kaikki.org/kowiktionary/%EC%98%81%EC%96%B4/kaikki.org-dictionary-%EC%98%81%EC%96%B4.jsonl
+Retrieved: 2026-11-04
+
+ja-en-jmdict
+Original: https://www.edrdg.org/jmdict/j_jmdict.html
+Data: https://www.edrdg.org/pub/Nihongo/JMdict_e.gz
+Retrieved: 2026-11-04
+
+ja-en-wiktionary
+Original: https://kaikki.org/dictionary/Japanese/index.html
+Data: https://kaikki.org/dictionary/Japanese/kaikki.org-dictionary-Japanese.jsonl
+Retrieved: 2026-11-04
+
+ja-ja-wiktionary
+Original: https://kaikki.org/jawiktionary/%E6%97%A5%E6%9C%AC%E8%AA%9E/index.html
+Data: https://kaikki.org/jawiktionary/%E6%97%A5%E6%9C%AC%E8%AA%9E/kaikki.org-dictionary-%E6%97%A5%E6%9C%AC%E8%AA%9E.jsonl
+Retrieved: 2026-11-04
+
+ja-ko-wiktionary
+Original: https://kaikki.org/kowiktionary/%EC%9D%BC%EB%B3%B8%EC%96%B4/index.html
+Data: https://kaikki.org/kowiktionary/%EC%9D%BC%EB%B3%B8%EC%96%B4/kaikki.org-dictionary-%EC%9D%BC%EB%B3%B8%EC%96%B4.jsonl
+Retrieved: 2026-11-04
+
+ko-en-wiktionary
+Original: https://kaikki.org/dictionary/Korean/index.html
+Data: https://kaikki.org/dictionary/Korean/kaikki.org-dictionary-Korean.jsonl
+Retrieved: 2026-11-04
+
+ko-ja-wiktionary
+Original: https://kaikki.org/jawiktionary/%E6%9C%9D%E9%AE%AE%E8%AA%9E/index.html
+Data: https://kaikki.org/jawiktionary/%E6%9C%9D%E9%AE%AE%E8%AA%9E/kaikki.org-dictionary-%E6%9C%9D%E9%AE%AE%E8%AA%9E.jsonl
+Retrieved: 2026-11-04
+
+ko-ko-wiktionary
+Original: https://kaikki.org/kowiktionary/%ED%95%9C%EA%B5%AD%EC%96%B4/index.html
+Data: https://kaikki.org/kowiktionary/%ED%95%9C%EA%B5%AD%EC%96%B4/kaikki.org-dictionary-%ED%95%9C%EA%B5%AD%EC%96%B4.jsonl
+Retrieved: 2026-11-04

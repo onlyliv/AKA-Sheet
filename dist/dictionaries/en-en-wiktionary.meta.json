@@ -1,0 +1,95 @@
+{
+  "id": "en-en-wiktionary",
+  "source": "en",
+  "target": "en",
+  "label": "Wiktionary · Kaikki",
+  "version": "2026-11-04",
+  "file": "dictionaries/en-en-wiktionary-01.jsonl.gz",
+  "bytes": 49271484,
+  "sha256": "232851ad7f2a03b57fe45db802b47250389fd05e7ef7d416b58cedbb574a9b85",
+  "entries": 1497828,
+  "upstream": "https://kaikki.org/dictionary/English/kaikki.org-dictionary-English.jsonl",
+  "page": "https://kaikki.org/dictionary/English/index.html",
+  "edition": "en",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rawBytes": 3431211190,
+  "files": [
+    {
+      "file": "dictionaries/en-en-wiktionary-01.jsonl.gz",
+      "bytes": 7207891,
+      "sha256": "612388ab3753339cda18b43eb57e5f47d669821eb3b028d42e4c0acac09a1951"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-02.jsonl.gz",
+      "bytes": 4036092,
+      "sha256": "f4f767c3d5b449e058f34a51c9fe6626ef2119e826b10879b561078098a93d56"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-03.jsonl.gz",
+      "bytes": 3258558,
+      "sha256": "fecde32f998d811f43347c7fefb9244ce7e97a8ced1f3a1bd26f67bcfef85362"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-04.jsonl.gz",
+      "bytes": 3178144,
+      "sha256": "57c98d422d68f0858028a261c7cb4d6ff28ef663555672186b84eb6ce3d994f9"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-05.jsonl.gz",
+      "bytes": 3111044,
+      "sha256": "32177d4f8f0311739e4211dc59f3d9d33eec4de67b016bdfa041e79fb7da8677"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-06.jsonl.gz",
+      "bytes": 3015747,
+      "sha256": "3f93fa62e1ff738652d97a697226522f612eb91a7e3f2f1d593200d4d48f50cf"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-07.jsonl.gz",
+      "bytes": 3074964,
+      "sha256": "c77f7775981a54954428190b6cd7422c1454096b924cc8d2bd82f3b6e4899f73"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-08.jsonl.gz",
+      "bytes": 2508843,
+      "sha256": "dcab1811ff89536bf2a021f0f4190c71d765e06c1d77df30f3dcd7c055753d3c"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-09.jsonl.gz",
+      "bytes": 2622986,
+      "sha256": "d853fedce011a1c65219cda42ce2e5b18b24cb997e10746fd241493dc4b863d0"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-10.jsonl.gz",
+      "bytes": 2882188,
+      "sha256": "19b86e464fd00de4416bd2bd8a4433154bc1de3fa250390f7570667015d57db3"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-11.jsonl.gz",
+      "bytes": 3060209,
+      "sha256": "87eb87ce2e540a1192ba4b65b94b6237728777107abc6b49380a30bfafac3cd5"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-12.jsonl.gz",
+      "bytes": 2716812,
+      "sha256": "2f53af4de422db54a2156e69cdd6d8f215ba0a5832700d74b474c30dc9d905d2"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-13.jsonl.gz",
+      "bytes": 2847704,
+      "sha256": "2b018158d11a7415afc2dd2a622a2088130cfd6ae3bbf3c18434c8016763570f"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-14.jsonl.gz",
+      "bytes": 2877276,
+      "sha256": "aa4033d5ff46f907371e931df91ac7e3ab00ba7741314fdd82e8b1d3c2356436"
+    },
+    {
+      "file": "dictionaries/en-en-wiktionary-15.jsonl.gz",
+      "bytes": 2873026,
+      "sha256": "a836221592cebb2e861ed96223f65568f1f9990c2e8e5d9e03ba047cb7d3e998"
+    }
+  ],
+  "textBytes": 210195253
+}

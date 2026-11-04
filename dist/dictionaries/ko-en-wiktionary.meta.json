@@ -1,0 +1,18 @@
+{
+  "id": "ko-en-wiktionary",
+  "source": "ko",
+  "target": "en",
+  "label": "Wiktionary · Kaikki",
+  "version": "2026-11-04",
+  "file": "dictionaries/ko-en-wiktionary.jsonl.gz",
+  "bytes": 2876927,
+  "sha256": "c2664907c37f88aa80afa5414f284f1d418d58409c50737c2672ae5a72ce3244",
+  "entries": 57764,
+  "upstream": "https://kaikki.org/dictionary/Korean/kaikki.org-dictionary-Korean.jsonl",
+  "page": "https://kaikki.org/dictionary/Korean/index.html",
+  "edition": "en",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "rawBytes": 207649961,
+  "textBytes": 11551326
+}
