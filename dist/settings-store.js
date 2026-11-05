@@ -19,7 +19,7 @@
   const used=new Set();for(const action of Object.keys(defaultKeys)){let k=normalizeKey(v.shortcuts?.[action],b.shortcuts[action]);if(k&&used.has(keyId(k)))k=null;b.shortcuts[action]=k;if(k)used.add(keyId(k))}return b;
  }
  function read(){try{return normalize(JSON.parse(localStorage.getItem(KEY)))}catch{return base()}}
- function write(value){const settings=normalize(value);localStorage.setItem(KEY,JSON.stringify(settings));return settings}
+ function write(value){const settings=normalize(value);localStorage.setItem(KEY,JSON.stringify(settings));root.UserData?.changed();return settings}
  function eventKey(e){return {code:e.code,ctrl:!!e.ctrlKey,alt:!!e.altKey,shift:!!e.shiftKey,meta:!!e.metaKey}}
  function matches(e,k){return !!k&&keyId(eventKey(e))===keyId(k)}
  function label(k){if(!k)return '지정 안 함';return [k.ctrl?'Ctrl':'',k.alt?'Alt':'',k.shift?'Shift':'',k.meta?'⌘':'',k.code==='Space'?'Space':k.code.replace(/^(Key|Digit)/,'')].filter(Boolean).join(' + ')}

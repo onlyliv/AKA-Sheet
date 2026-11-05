@@ -7,7 +7,7 @@ let readingDirection='ltr';
 let viewCount=1,scrollLock=0,scrollSum=0,scrollTime=0,arrivalBottom=false;
 let pdf=null,img=null,raw=null,page=1,total=1,hidden=false,zoom=1,busy=false,fileKey='',sequence=0;
 const status=s=>$('status').textContent=s;
-function prefs(k,v){try{if(v!==undefined)localStorage.setItem(k,v);else return localStorage.getItem(k)}catch{} }
+function prefs(k,v){try{if(v!==undefined){localStorage.setItem(k,v);globalThis.UserData?.changed()}else return localStorage.getItem(k)}catch{} }
 const startupSettings=AppSettings.read();
 let sheetColors=[...startupSettings.sheet.colors],sheetMode=startupSettings.sheet.mode,sheetColor=startupSettings.sheet.color,sessionSensitivities={...startupSettings.sheet.sensitivity};hidden=!startupSettings.sheet.reveal;
 
