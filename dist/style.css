@@ -137,3 +137,7 @@ body[data-reader-mode="select"] #viewport{padding-bottom:0}body[data-reader-mode
 .vocab-word-row label{display:flex;flex-direction:column}.vocab-word-row input,#vocabMeaning{font:inherit;padding:8px;border:1px solid #bfc5b9;border-radius:5px}.vocab-word-row input{height:35px}
 
 main>aside>details[hidden],#vocabQuickStatus[hidden]{display:none!important}.menu-preferences{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:13px}.menu-preferences th,.menu-preferences td{padding:10px 6px;border-bottom:1px solid #deded3}.menu-preferences th{text-align:left;font-weight:500}.menu-preferences td,.menu-preferences thead th:not(:first-child){text-align:center}.menu-preferences input{accent-color:var(--sheet-accent);width:17px;height:17px;margin:0}.menu-preferences input:disabled{opacity:.4}
+
+#quickTranslation .reader-entry-actions #quickTranslate,#quickTranslation .reader-entry-actions #openTranslation{margin:0;width:100%;font-size:11px;padding:8px 3px;background:var(--sheet);color:var(--sheet-ink);border:1px solid var(--sheet-border)}.vocab-export-actions{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.vocab-export-actions button{font-size:12px}#vocabCopyFallback{width:100%;min-height:130px;box-sizing:border-box}#vocabCopyFallback[hidden]{display:none}
+
+#vocabCopyFallbackArea[hidden]{display:none}
