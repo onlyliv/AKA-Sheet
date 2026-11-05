@@ -1,0 +1,1 @@
+{"private":true,"description":"Local storage regression tests for AKA Sheet","devDependencies":{"fake-indexeddb":"6.2.4"}}

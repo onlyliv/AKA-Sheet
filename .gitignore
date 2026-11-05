@@ -2,3 +2,4 @@
 # Dictionary build intermediates
 dist/dictionaries/*.tmp
 scripts/__pycache__/
+tests/node_modules/
