@@ -1,0 +1,11 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const nodes=new Map(),E=id=>{if(!nodes.has(id))nodes.set(id,{checked:true,disabled:false,open:false,hidden:false});return nodes.get(id)};
+const source=fs.readFileSync('dist/settings-ui.js','utf8');
+const rows=source.match(/const menuRows=([^;]+);/)[0];
+const checks=source.slice(source.indexOf('function menuChecks()'),source.indexOf('function toast('));
+const apply=source.slice(source.indexOf('function applyMenus('),source.indexOf('function saveRecognition('));
+const c={E,layout(){}};vm.createContext(c);vm.runInContext(rows+checks+apply,c);
+const s={menus:{sheet:true,highlight:false,note:true,vocabulary:false,selection:true,translation:true},menuVisibility:{sheet:true,highlight:true,note:false,vocabulary:true,selection:false,translation:true},width:20,height:20};c.applyMenus(s);
+assert.equal(E('highlightMenu').open,false);assert.equal(E('highlightMenu').hidden,false);assert.equal(E('noteMenu').hidden,true);assert.equal(E('noteMenu').open,true);assert.equal(E('textSelectionMenu').hidden,true);
+E('visibleMenuSelection').checked=false;E('defaultMenuSelection').checked=true;c.menuChecks();assert.equal(E('defaultMenuSelection').disabled,true);assert.equal(E('defaultMenuSelection').checked,true);E('visibleMenuSelection').checked=true;c.menuChecks();assert.equal(E('defaultMenuSelection').disabled,false);assert.equal(E('defaultMenuSelection').checked,true);
+console.log('메뉴 숨김과 펼침 독립·비활성 값 보존 검사 통과');

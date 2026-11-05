@@ -135,3 +135,5 @@ body[data-reader-mode="select"] #viewport{padding-bottom:0}body[data-reader-mode
 .vocab-word-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}.vocab-word-row label{display:grid;gap:6px;min-width:0}.vocab-languages[hidden]{display:none}#vocabEditor .vocab-toolbar{margin:0 0 5px}#vocabEditor textarea{resize:vertical}
 
 .vocab-word-row label{display:flex;flex-direction:column}.vocab-word-row input,#vocabMeaning{font:inherit;padding:8px;border:1px solid #bfc5b9;border-radius:5px}.vocab-word-row input{height:35px}
+
+main>aside>details[hidden],#vocabQuickStatus[hidden]{display:none!important}.menu-preferences{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:13px}.menu-preferences th,.menu-preferences td{padding:10px 6px;border-bottom:1px solid #deded3}.menu-preferences th{text-align:left;font-weight:500}.menu-preferences td,.menu-preferences thead th:not(:first-child){text-align:center}.menu-preferences input{accent-color:var(--sheet-accent);width:17px;height:17px;margin:0}.menu-preferences input:disabled{opacity:.4}
