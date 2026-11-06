@@ -1,0 +1,15 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const base='https://app.invalid/reader/',url=p=>new URL(p,base).href,maps=new Map(),listeners={};let offline=false,requests=0;
+const key=r=>url(typeof r==='string'?r:r.url),open=async n=>{if(!maps.has(n))maps.set(n,new Map());const m=maps.get(n);return {match:async r=>m.get(key(r))?.clone(),put:async(r,v)=>m.set(key(r),v.clone()),addAll:async list=>{const incoming=await Promise.all(list.map(async p=>[key(p),await fetchFile(p)]));for(const [k,v]of incoming)m.set(k,v)}}};
+async function fetchFile(p){requests++;if(offline)throw Error('offline');const path=new URL(key(p)).pathname.replace('/reader/','');assert(fs.existsSync('dist/'+(path||'index.html')),'Missing '+path);return new Response('cached:'+path)}
+const caches={open,keys:async()=>[...maps.keys()],delete:async n=>maps.delete(n),match:async r=>{for(const n of maps.keys()){const v=await(await open(n)).match(r);if(v)return v}}};
+const scope={URL,caches,fetch:fetchFile,self:{location:{href:base+'sw.js',origin:new URL(base).origin},addEventListener:(n,f)=>listeners[n]=f,skipWaiting(){},clients:{claim(){}}}};vm.createContext(scope);vm.runInContext(fs.readFileSync('dist/sw.js','utf8')+';this.assets=ASSETS;this.current=CACHE;',scope);
+const needed=['vendor/ai/transformers.min.js','vendor/ai/ort-wasm-simd-threaded.jsep.mjs','vendor/ai/ort-wasm-simd-threaded.jsep.wasm','vendor/ocr/tesseract-core-lstm.wasm.js','vendor/ocr/tesseract-core-lstm.wasm','vendor/ocr/tesseract-core-simd-lstm.wasm.js','vendor/ocr/tesseract-core-simd-lstm.wasm'];
+(async()=>{for(const p of needed)assert(scope.assets.includes('./'+p),'First offline engine dependency missing: '+p);
+const html=fs.readFileSync('dist/index.html','utf8');for(const m of html.matchAll(/(?:src|href)="([^"#]+\.(?:js|css)(?:\?[^" ]+)?)"/g))assert(scope.assets.includes('./'+m[1]),'Uncached app dependency: '+m[1]);
+assert(!scope.assets.some(p=>/models\/|\.jsonl\.gz$/.test(p)),'No automatic translation weights or dictionary packs');
+await(await open('akai-beta-old')).put('vendor/ai/transformers.min.js',new Response('old-code'));await(await open('transformers-cache')).put('weights',new Response('existing-weights'));await(await open('akai-paddle-024')).put('model',new Response('existing-ocr'));
+let wait;listeners.install({waitUntil:p=>wait=p});await wait;listeners.activate({waitUntil:p=>wait=p});await wait;assert(!maps.has('akai-beta-old'));assert(maps.has('transformers-cache'));assert(maps.has('akai-paddle-024'));offline=true;
+// A cold page can load every app resource and first-use inference runtime after update.
+for(const path of [...scope.assets,...needed.map(p=>'./'+p)]){let result;listeners.fetch({request:{url:url(path),method:'GET'},respondWith:p=>result=p});assert(result,'No handler '+path);const r=await result;assert(r?.ok,'Offline missing '+path);assert((await r.text()).startsWith('cached:'))}
+console.log('새 설치·버전 갱신 후 앱 전체/첫 Tesseract·번역 실행 파일 오프라인 로드·기존 모델 보존·가중치/사전 자동 다운로드 제외 검사 통과');})().catch(e=>{console.error(e);process.exit(1)});
