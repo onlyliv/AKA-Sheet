@@ -1,0 +1,13 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const listeners={},maps=new Map(),base='https://app.invalid/reader/',url=p=>new URL(p,base).href;let calls=0,fail=false,slow=false,quota=false;
+const open=async name=>{if(!maps.has(name))maps.set(name,new Map());const m=maps.get(name);return {match:async req=>m.get(typeof req==='string'?req:req.url)?.clone(),put:async(req,r)=>{if(quota)throw Error('quota');m.set(typeof req==='string'?req:req.url,r.clone())},addAll:async()=>{}}};
+const caches={open,keys:async()=>[...maps.keys()],delete:async n=>maps.delete(n),match:async req=>{for(const n of maps.keys()){const r=await (await open(n)).match(req);if(r)return r}}};
+const scope={URL,caches,fetch:async()=>{calls++;if(fail)throw Error('offline');if(slow)return new Promise(()=>{});return new Response('network-current')},self:{location:{href:base+'sw.js',origin:new URL(base).origin},addEventListener:(n,f)=>listeners[n]=f,skipWaiting(){},clients:{claim(){}}}};vm.createContext(scope);vm.runInContext(fs.readFileSync('dist/sw.js','utf8')+';this.current=CACHE;this.ready=PADDLE_CACHE;',scope);
+async function request(path){let result;listeners.fetch({request:{url:url(path),method:'GET'},respondWith:p=>result=p});return result}
+(async()=>{await (await open(scope.current)).put(url('paddle-worker.js?v=0.38.1-beta.1'),new Response('current-worker'));await (await open(scope.ready)).put(url('vendor/paddle/sdk.mjs'),new Response('prepared-sdk'));slow=true;assert.equal(await (await request('vendor/paddle/sdk.mjs')).text(),'prepared-sdk');assert.equal(await (await request('paddle-worker.js?v=0.38.1-beta.1')).text(),'current-worker');assert.equal(calls,0);slow=false;
+await (await open('akai-beta-old')).put(url('paddle-worker.js?v=0.38.0-beta.1'),new Response('old-worker'));assert.equal(await (await request('paddle-worker.js?v=0.38.2-beta.1')).text(),'network-current');assert.equal(calls,1);
+fail=true;assert.equal(await (await request('vendor/paddle/sdk.mjs')).text(),'prepared-sdk');assert.equal(calls,1);await assert.rejects(request('vendor/paddle/missing.mjs'),/offline/);
+fail=false;quota=true;assert.equal(await (await request('vendor/ocr/missing.wasm')).text(),'network-current');quota=false;
+await (await open(scope.current)).put(url('index.html'),new Response('cached-html'));const before=calls;assert.equal(await (await request('index.html')).text(),'network-current');assert.equal(calls,before+1);
+let wait;listeners.activate({waitUntil:p=>wait=p});await wait;assert(maps.has(scope.current));assert(maps.has(scope.ready));assert(!maps.has('akai-beta-old'));
+console.log('OCR 캐시 적중 시 네트워크 0회·지연/오프라인 즉시 응답·버전 분리·캐시 누락/용량 실패·일반 앱 갱신·Paddle 캐시 보존 검사 통과');})().catch(e=>{console.error(e);process.exit(1)});
