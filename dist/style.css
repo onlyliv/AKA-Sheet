@@ -156,3 +156,5 @@ main>aside>details[hidden],#vocabQuickStatus[hidden]{display:none!important}.men
 .brand-row #openSettings .settings-label{display:none}
 
 .drive-panel{border:1px solid var(--line,#d9dcd3);border-radius:8px;padding:14px;margin-bottom:20px}.drive-panel h3{margin-top:0}.drive-panel details{margin:12px 0}.drive-panel input[type=text]{width:100%;min-width:0;box-sizing:border-box}.drive-panel [data-error=true]{color:#a83c35}.drive-panel .data-file-actions{flex-wrap:wrap}.drive-panel p{overflow-wrap:anywhere}
+
+.drive-sidebar-status{display:block;width:100%;background:transparent;color:var(--muted,#626c61);border:0;border-top:1px solid var(--line,#dedfd7);border-radius:0;padding:8px 2px;text-align:left;font-size:11px;line-height:1.5;overflow-wrap:anywhere}.drive-sidebar-status[data-error=true]{color:#a83c35}

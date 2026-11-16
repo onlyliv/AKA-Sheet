@@ -1,2 +1,2 @@
-/* Public OAuth client ID only. Never place a client secret or token here. */
-globalThis.AKA_DRIVE_CONFIG=Object.freeze({clientId:''});
+/* Public web OAuth client ID; no secret or token. */
+globalThis.AKA_DRIVE_CONFIG=Object.freeze({clientId:'428398351553-0fj6kop975h0kdg7375q824olf9tmpnh.apps.googleusercontent.com'});
