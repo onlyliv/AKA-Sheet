@@ -154,3 +154,6 @@ main>aside>details[hidden],#vocabQuickStatus[hidden]{display:none!important}.men
 /* Settings stays in the mobile header and moves to the desktop footer. */
 @media(min-width:601px){.brand-row{grid-template-columns:minmax(0,1fr) 32px}.app-menu{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:5px}.app-menu button{font-size:10px;padding:6px 7px}.app-menu .settings-icon{display:none}}
 .brand-row #openSettings .settings-label{display:none}
+
+/* Translated labels may be wider than Korean; keep controls readable at narrow menu sizes. */
+.ui-language-setting{margin:0 0 18px;padding:0 0 12px;border-bottom:1px solid var(--line,#d9dcd3)}.ui-language-setting select{min-width:0;width:100%;max-width:300px}.reader-entry-actions>button{white-space:normal;line-height:1.4}.settings-tabs>button{white-space:normal;overflow-wrap:anywhere}.menu-preferences th[scope=row]{overflow-wrap:anywhere}.app-menu button{white-space:normal}html[lang=en] .reader-entry-actions>button{font-size:10px}
