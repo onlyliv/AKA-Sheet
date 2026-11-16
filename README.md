@@ -1,4 +1,4 @@
-> **Google Drive 동기화 베타 · 1.2.1-beta.1**
+> **Google Drive 동기화 베타 · 1.2.2-beta.1**
 > 이 브랜치는 `beta/google-drive-sync`입니다. 기존 서비스와 `main`은 1.0.0을 유지합니다. 별도 [웹 베타](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/)에서 여러 기기 검증을 진행합니다. 기존 서비스의 기록은 자동 이전되지 않습니다. [베타 실행·설정 안내](docs/GOOGLE-DRIVE-BETA.md)
 
 <p align="center"><img src="dist/icon-192.png" width="80" alt="AKA Sheet 로고"></p>

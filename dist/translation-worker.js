@@ -1,5 +1,5 @@
-import './study-languages.js?v=1.2.1-beta.1';
-import './translation-text.js?v=1.2.1-beta.1';
+import './study-languages.js?v=1.2.2-beta.1';
+import './translation-text.js?v=1.2.2-beta.1';
 import {pipeline,env} from './vendor/ai/transformers.min.js';
 // Never probe a missing /models URL: static hosts may return index.html (HTTP 200).
 env.allowLocalModels=false;env.allowRemoteModels=true;env.localModelPath='/__no_local_model_files__/';env.useBrowserCache=true;
