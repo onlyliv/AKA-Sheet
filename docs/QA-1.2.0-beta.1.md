@@ -9,3 +9,13 @@
 - 실제 다른 물리 기기의 상호 동기화·모바일 펜·백그라운드 동작은 사용자의 추가 테스트가 필요. 이전 로컬 베타에서 Google 로그인과 실제 Drive 동기화 성공을 확인한 이력이 있으나, 새 HTTPS origin의 계정 인증·동기화는 별도 검증해야 함.
 
 검증 결과: 기존 검사를 포함한 CJS 44개, 전체 dist 스크립트 구문 및 diff 공백 검사 통과. 별도 localhost 저장소에서 초기 실행, 임베딩된 클라이언트 ID 안내, 메뉴 하단 상태 버튼 → 저장 데이터 관리 바로가기 확인.
+
+## 배포 확인
+
+- 별도 웹 베타: https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/
+- 사용자 등록 완료 응답으로 새 origin의 Google OAuth 승인 원본 등록 확인.
+- 배포 소스: e7d2c6eb3320fb7cfdc8d1fde7d7a90a43fcb405 (Sites 전용 소스 저장소). GitHub 기능 릴리스: cc9cb32. Sites 초기 업로드는 64MiB/요청 제한 때문에 동일 최종 트리를 6개 누적 커밋으로 나눠 전송했다.
+- saved version: appgprj_6afac413d82c8191b8fe1836439b2716~appgver_e2860512bab48191a43adcbc95c20fb3
+- deployment: appgdep_6afae023986c81918b6ea3397f05b323 · succeeded 확인. 최초 배포 도구 응답 시간 초과 후 상태 조회로 완료 확인했으며 중복 배포하지 않음.
+- 실제 Chrome에서 소유자 ChatGPT 로그인 후 1.2.0-beta.1 기동, 메뉴 하단 상태와 설정 바로가기 확인. 새 웹 origin에서는 학습 기록이 비어 있으며 사용자 Google 연결/동기화 전까지 자동 전송하지 않음.
+- 공개 클라이언트 ID 포함. 물리 다른 기기 간 왕복 검증은 사용자 시험이 남아 있다.
