@@ -1,1 +1,1 @@
-{"version":"7","dialect":"sqlite","entries":[{"idx":0,"version":"6","when":1794830400000,"tag":"0000_drive_credentials","breakpoints":true}]}
+{"version": "7", "dialect": "sqlite", "entries": [{"idx": 0, "version": "6", "when": 1794830400000, "tag": "0000_drive_credentials", "breakpoints": true}, {"idx": 1, "version": "6", "when": 1794840000000, "tag": "0001_sync_v2", "breakpoints": true}]}
