@@ -17,3 +17,8 @@ AKA-Sheet-auto.json
 AKA-Sheet-backup-*.json
 *.bundle
 aka-sheet-*-deploy.tar.gz
+
+# Generated server deployment output
+dist/client/
+dist/server/
+dist/.openai/
