@@ -1,6 +1,6 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
 const nodes=new Map(),E=id=>{if(!nodes.has(id))nodes.set(id,{checked:true,disabled:false,open:false,hidden:false,insertBefore(){}});return nodes.get(id)};
-const source=fs.readFileSync('dist/settings-ui.js','utf8');
+const source=fs.readFileSync('public/settings-ui.js','utf8');
 const rows=source.match(/const menuRows=([^;]+);/)[0];
 const checks=source.slice(source.indexOf('function menuChecks()'),source.indexOf('function toast('));
 const apply=source.slice(source.indexOf('function applyMenus('),source.indexOf('function saveRecognition('));

@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
-const app=fs.readFileSync('dist/app.js','utf8'),book=fs.readFileSync('dist/book-open.js','utf8');
+const app=fs.readFileSync('public/app.js','utf8'),book=fs.readFileSync('public/book-open.js','utf8');
 // Instantiate actual top-level function declarations as classic scripts do in a browser.
 const nativeOpen=function(url){return {popup:true,url}},c={open:nativeOpen};vm.createContext(c);
 for(const line of app.split('\n').filter(l=>/^(async )?function \w+\(/.test(l))){const name=line.match(/function (\w+)\(/)[1];if(name==='openBookFile')vm.runInContext(line,c)}

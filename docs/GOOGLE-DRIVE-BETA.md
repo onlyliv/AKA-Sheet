@@ -20,9 +20,9 @@ python3 -m http.server 8789 --bind 127.0.0.1 --directory dist
 3. Google Auth Platform에서 앱 이름·지원 이메일·대상 사용자를 설정합니다. 앱 홈페이지와 개인정보 안내 URL이 필요하면 공개된 프로젝트 소개와 [데이터 처리 안내](PRIVACY.md)를 사용하되, Google의 도메인 요구 사항을 확인합니다. 외부 사용자 대상의 테스트 상태로 시작하고, 실제 시험할 Google 계정을 테스트 사용자에 등록합니다.
 4. 요청 범위에 `openid`와 `https://www.googleapis.com/auth/drive.appdata`를 추가합니다. 전체 Drive 접근 권한은 필요하지 않습니다.
 5. OAuth 클라이언트를 **웹 애플리케이션**으로 만들고, 승인된 JavaScript 원본에 정확히 `http://127.0.0.1:8789`를 등록합니다. `localhost`는 다른 원본이므로 필요하면 별도로 등록합니다. 토큰 방식 팝업을 사용하므로 이 구현의 로그인 완료용 리디렉션 URL은 없습니다.
-6. 생성된 **클라이언트 ID**(`….apps.googleusercontent.com`)만 개발용 `dist/drive-config.js`에 넣습니다. 비밀 키는 입력하거나 GitHub에 올리지 마세요.
+6. 생성된 **클라이언트 ID**(`….apps.googleusercontent.com`)만 개발용 `public/drive-config.js`에 넣습니다. 비밀 키는 입력하거나 GitHub에 올리지 마세요.
 
-앱을 배포할 때는 `dist/drive-config.js`에 공개 클라이언트 ID를 넣고, 별도 베타 HTTPS 주소를 승인된 JavaScript 원본에 추가합니다. 현재 베타에는 공개 클라이언트 ID가 포함되어 있습니다. Google 로그인은 사용자가 직접 시작합니다. OAuth 클라이언트 ID는 같은 Google Cloud 프로젝트를 사용하는 기기들이 공통으로 사용해야 동일 앱 데이터 공간을 조회할 수 있습니다.
+앱을 배포할 때는 `public/drive-config.js`에 공개 클라이언트 ID를 넣고, 별도 베타 HTTPS 주소를 승인된 JavaScript 원본에 추가합니다. 현재 베타에는 공개 클라이언트 ID가 포함되어 있습니다. Google 로그인은 사용자가 직접 시작합니다. OAuth 클라이언트 ID는 같은 Google Cloud 프로젝트를 사용하는 기기들이 공통으로 사용해야 동일 앱 데이터 공간을 조회할 수 있습니다.
 
 현재 공유 호스팅 주소에 대한 도메인 소유 확인이나 Google의 앱 공개·브랜드 검증이 필요한 경우 별도 조치가 필요합니다. 로컬 테스트부터 완료하고, Google의 실제 검증 요구를 확인한 뒤 공개 배포하세요. 테스트 사용자 외 모든 사람에게 곧바로 연결된다고 보장하지 않습니다. 기존 운영 Sites 프로젝트에 이 브랜치를 배포하지 마세요.
 

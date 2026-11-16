@@ -1,4 +1,4 @@
-const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');vm.runInThisContext(fs.readFileSync('dist/translation-text.js','utf8'));
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');vm.runInThisContext(fs.readFileSync('public/translation-text.js','utf8'));
 assert.equal(TranslationText.normalize('部 首 名\nを 答え る 必要 は あり ませ ん。'),'部首名を答える必要はありません。');
 assert.equal(TranslationText.normalize('ABC\nDEF'),'ABC DEF');
 const long='漢字の学習を続けます。'.repeat(180)+'最後の一文です。';const parts=TranslationText.chunks(long);assert(parts.length>1);assert(parts.every(s=>Array.from(s).length<=140));assert.equal(parts.join(''),TranslationText.normalize(long));assert(parts.at(-1).includes('最後'));

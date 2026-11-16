@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
-vm.runInThisContext(fs.readFileSync('dist/translation-task.js','utf8'));
+vm.runInThisContext(fs.readFileSync('public/translation-task.js','utf8'));
 function worker(){return{postMessage(p){this.payload=p},terminate(){this.terminated=true},emit(d){this.onmessage({data:{id:1,...d}})}}}
 (async()=>{
  let w=worker(),states=[];let t=createTranslationTask(w,{id:1},s=>states.push(s));let failure=t.promise.catch(e=>e.message);w.emit({type:'error',message:'failed to initialize'});w.emit({type:'progress',message:'done'});assert.equal(await failure,'failed to initialize');assert.deepEqual(states,[],'late progress cannot overwrite error');

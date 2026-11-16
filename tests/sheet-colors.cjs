@@ -1,4 +1,4 @@
-const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');vm.runInThisContext(fs.readFileSync('dist/sheet-colors.js','utf8'));
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');vm.runInThisContext(fs.readFileSync('public/sheet-colors.js','utf8'));
 const samples={red:[220,50,45],green:[40,170,65],blue:[45,75,210]};
 for(const color of Object.keys(samples)){
  for(const [other,rgb]of Object.entries(samples))assert.equal(SheetColors.matches(...rgb,color,60),other===color);

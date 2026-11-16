@@ -1,7 +1,7 @@
 > **Google Drive 동기화 베타 · 1.3.0-beta.1**
 > 이 브랜치는 `beta/google-drive-sync`입니다. 기존 서비스와 `main`은 1.0.0을 유지합니다. 별도 [웹 베타](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/)에서 여러 기기 검증을 진행합니다. 기존 서비스의 기록은 자동 이전되지 않습니다. [베타 실행·설정 안내](docs/GOOGLE-DRIVE-BETA.md)
 
-<p align="center"><img src="dist/icon-192.png" width="80" alt="AKA Sheet 로고"></p>
+<p align="center"><img src="public/icon-192.png" width="80" alt="AKA Sheet 로고"></p>
 
 # AKA Sheet
 
@@ -9,7 +9,7 @@
 
 일본어 한자 학습서의 빨간 정답을 디지털 적색 시트로 가리고 싶다는 필요에서 시작했습니다. PDF·EPUB·이미지 위에서 색상 숨김, OCR, 번역, 형광펜, 메모, 사전, 단어장으로 학습을 이어갈 수 있도록 확장한 개인 프로젝트입니다.
 
-**[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](dist/releases.js) · [1.0.0 검증 기록](docs/QA-1.0.0-2026-11-16.md)
+**[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](public/releases.js) · [1.0.0 검증 기록](docs/QA-1.0.0-2026-11-16.md)
 
 현재 앱 버전 **1.0.0** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
 
@@ -57,7 +57,7 @@
 이 저장소는 빌드 과정이 없는 HTML/CSS/JavaScript 앱입니다. 저장소를 받은 뒤 프로젝트 폴더에서 실행합니다.
 
 ```sh
-python3 -m http.server 8765 --bind 127.0.0.1 --directory dist
+python3 -m http.server 8765 --bind 127.0.0.1 --directory public
 ```
 
 브라우저에서 `http://127.0.0.1:8765/`를 엽니다. 파일을 직접 더블 클릭하는 `file://` 방식 대신 HTTP 서버를 사용하세요. 사이트 주소·브라우저·포트가 바뀌면 별도 저장소로 취급되므로 필요한 사용자 데이터는 백업 파일로 옮깁니다.
@@ -66,11 +66,13 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory dist
 
 | 경로 | 내용 |
 |---|---|
-| `dist/` | 실제 배포되는 앱 및 로컬 실행 파일 |
+| `public/` | 앱 정적 원본 및 로컬 실행 파일 |
+| `server/` | Google 권한 갱신 서버 |
+| `dist/` | 빌드로 생성되는 배포 결과물 |
 | `tests/` | 기능·저장·오프라인 회귀 검사 |
 | `docs/` | QA 결과와 검증 범위 |
 | `scripts/` | 사전 데이터 생성·가공 스크립트 |
-| `licenses/`, `dist/licenses/` | 외부 구성 요소의 이용 조건 |
+| `licenses/`, `public/licenses/` | 외부 구성 요소의 이용 조건 |
 | `.openai/hosting.json` | 기존 Sites 배포 대상 설정. 인증 정보는 포함하지 않음 |
 | `VERSIONING.md`, `BETA-PLAN.md` | 버전 정책 및 개발 이력 |
 
@@ -81,7 +83,7 @@ Node.js와 npm이 설치된 환경에서 프로젝트 폴더에서 실행합니�
 ```sh
 npm ci --prefix tests --ignore-scripts
 for f in tests/*.cjs; do node "$f" || exit 1; done
-for f in dist/*.js; do node --check "$f" || exit 1; done
+for f in public/*.js; do node --check "$f" || exit 1; done
 ```
 
 사전팩을 변경했을 때는 추가로 `python3 tests/dictionary-packs.py`를 실행합니다. 자동 검사는 실제 모바일/Windows 기기 QA를 대신하지 않습니다.

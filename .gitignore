@@ -1,6 +1,6 @@
 
 # Dictionary build intermediates
-dist/dictionaries/*.tmp
+public/dictionaries/*.tmp
 scripts/__pycache__/
 tests/node_modules/
 
@@ -22,3 +22,4 @@ aka-sheet-*-deploy.tar.gz
 dist/client/
 dist/server/
 dist/.openai/
+dist/

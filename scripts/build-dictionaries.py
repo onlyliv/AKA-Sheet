@@ -2,7 +2,7 @@
 No audio/images or external book content. Each compact record preserves its source word.
 """
 import urllib.request,urllib.parse,re,json,gzip,hashlib,datetime,concurrent.futures,pathlib,time,sys
-BASE=pathlib.Path(__file__).resolve().parents[1];OUT=BASE/'dist/dictionaries';OUT.mkdir(exist_ok=True)
+BASE=pathlib.Path(__file__).resolve().parents[1];OUT=BASE/'public/dictionaries';OUT.mkdir(exist_ok=True)
 names={'ko':'한국어','ja':'일본어','en':'영어'}
 langs={'ko':{'ko':'한국어','ja':'일본어','en':'영어'},'ja':{'ko':'朝鮮語','ja':'日本語','en':'英語'},'en':{'ko':'Korean','ja':'Japanese','en':'English'}}
 def norm(s):
@@ -12,7 +12,7 @@ def build(source,target):
  pid=f'{source}-{target}-wiktionary';out=OUT/(pid+'.jsonl.gz');meta=OUT/(pid+'.meta.json')
  if meta.exists():
   saved=json.loads(meta.read_text())
-  if out.exists() or saved.get('files') and all((BASE/'dist'/f['file']).exists() for f in saved['files']):return saved
+  if out.exists() or saved.get('files') and all((BASE/'public'/f['file']).exists() for f in saved['files']):return saved
  edition={'ko':'kowiktionary','ja':'jawiktionary','en':'dictionary'}[target];lang=langs[target][source]
  page='https://kaikki.org/'+edition+'/'+urllib.parse.quote(lang)+'/index.html'
  html=urllib.request.urlopen(page,timeout=90).read().decode();href=next(x for x in re.findall(r'href="([^"]+)"',html) if x.endswith('.jsonl'))
@@ -35,7 +35,7 @@ def build(source,target):
    row={'w':word,'k':keys,'p':entry.get('pos',''),'s':senses,'r':list(dict.fromkeys(forms))[:16]}
    f.write(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n');count+=1
  temp.replace(out)
- m={'id':pid,'source':source,'target':target,'label':'Wiktionary · Kaikki','version':'2026-11-04','file':str(out.relative_to(BASE/'dist')),'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'entries':count,'upstream':url,'page':page,'edition':target,'license':'CC BY-SA 4.0','licenseUrl':'https://creativecommons.org/licenses/by-sa/4.0/','rawBytes':raw}
+ m={'id':pid,'source':source,'target':target,'label':'Wiktionary · Kaikki','version':'2026-11-04','file':str(out.relative_to(BASE/'public')),'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'entries':count,'upstream':url,'page':page,'edition':target,'license':'CC BY-SA 4.0','licenseUrl':'https://creativecommons.org/licenses/by-sa/4.0/','rawBytes':raw}
  meta.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('DONE',pid,count,m['bytes'],round(time.time()-start),flush=True);return m
 if __name__=='__main__':
  with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:

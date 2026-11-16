@@ -1,6 +1,6 @@
 """Optional Japanese-English pack. Retain reading/sense restrictions in display."""
 import urllib.request,gzip,xml.etree.ElementTree as ET,json,pathlib,hashlib,sys
-root=pathlib.Path(__file__).resolve().parents[1];out=root/'dist/dictionaries';url='https://www.edrdg.org/pub/Nihongo/JMdict_e.gz'
+root=pathlib.Path(__file__).resolve().parents[1];out=root/'public/dictionaries';url='https://www.edrdg.org/pub/Nihongo/JMdict_e.gz'
 data=gzip.decompress(pathlib.Path(sys.argv[1]).read_bytes() if len(sys.argv)>1 else urllib.request.urlopen(url,timeout=90).read());tree=ET.fromstring(data);path=out/'ja-en-jmdict.jsonl.gz';count=0
 with gzip.open(path,'wt',encoding='utf8',compresslevel=9) as f:
  for entry in tree.findall('entry'):
