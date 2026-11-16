@@ -154,3 +154,5 @@ main>aside>details[hidden],#vocabQuickStatus[hidden]{display:none!important}.men
 /* Settings stays in the mobile header and moves to the desktop footer. */
 @media(min-width:601px){.brand-row{grid-template-columns:minmax(0,1fr) 32px}.app-menu{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:5px}.app-menu button{font-size:10px;padding:6px 7px}.app-menu .settings-icon{display:none}}
 .brand-row #openSettings .settings-label{display:none}
+
+.drive-panel{border:1px solid var(--line,#d9dcd3);border-radius:8px;padding:14px;margin-bottom:20px}.drive-panel h3{margin-top:0}.drive-panel details{margin:12px 0}.drive-panel input[type=text]{width:100%;min-width:0;box-sizing:border-box}.drive-panel [data-error=true]{color:#a83c35}.drive-panel .data-file-actions{flex-wrap:wrap}.drive-panel p{overflow-wrap:anywhere}

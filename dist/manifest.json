@@ -1,1 +1,23 @@
-{"name": "AKA Sheet", "short_name": "AKA Sheet", "start_url": "./", "scope": "./", "display": "standalone", "background_color": "#f6f3ed", "theme_color": "#a83c35", "icons": [{"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"}, {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}]}
+{
+  "name": "AKA Sheet β · Drive 동기화",
+  "short_name": "AKA Sheet β",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f3ed",
+  "theme_color": "#a83c35",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
