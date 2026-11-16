@@ -1,6 +1,7 @@
+var L_recognition_settings_js=globalThis.I18n||{t:(s,v)=>v?s.replace(/\{(\w+)\}/g,(m,k)=>v[k]??m):s,error:s=>s,locale:undefined};
 /* One session-wide recognition preference. Saving defaults never stores model consent. */
 (function(root){
- const writings=['auto','horizontal','vertical','english','korean'],names={auto:'자동',horizontal:'일본어 가로',vertical:'일본어 세로',english:'영어',korean:'한국어'},subscribers=new Set();
+ const writings=['auto','horizontal','vertical','english','korean'],names={auto:L_recognition_settings_js.t("자동"),horizontal:L_recognition_settings_js.t("일본어 가로"),vertical:L_recognition_settings_js.t("일본어 세로"),english:L_recognition_settings_js.t("영어"),korean:L_recognition_settings_js.t("한국어")},subscribers=new Set();
  const saved=AppSettings.read(),legacy=k=>{try{return localStorage.getItem('akai.translation.'+k)}catch{return null}},initial=saved.ocr||saved.translation||{};
  let state={writing:initial.writing||legacy('writing')||'auto',ocr:initial.ocr||legacy('ocr')||'paddle'};
  if(!writings.includes(state.writing))state.writing='auto';if(!['fast','best','paddle'].includes(state.ocr))state.ocr='paddle';

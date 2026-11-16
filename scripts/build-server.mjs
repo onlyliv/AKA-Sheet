@@ -1,3 +1,4 @@
+await import('./build-i18n.mjs');
 import {cp,mkdir,readdir,rm,writeFile,readFile} from 'node:fs/promises';
 await rm('dist/client',{recursive:true,force:true});
 await mkdir('dist/client',{recursive:true});

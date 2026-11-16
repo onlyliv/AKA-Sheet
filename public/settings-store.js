@@ -1,3 +1,4 @@
+var L_settings_store_js=globalThis.I18n||{t:(s,v)=>v?s.replace(/\{(\w+)\}/g,(m,k)=>v[k]??m):s,error:s=>s,locale:undefined};
 /* Settings contain preferences only; books, source text and model consent stay separate. */
 (function(root){
  const KEY='akai.settings.v1',colors=['red','green','blue'];
@@ -8,10 +9,10 @@
  function legacy(k){try{return localStorage.getItem(k)}catch{return null}}
  function bounded(v,fallback,min,max){const n=Number(v);return v==null||!Number.isFinite(n)?fallback:Math.max(min,Math.min(max,n))}
  function keyId(k){return k?[k.ctrl?'C':'',k.alt?'A':'',k.shift?'S':'',k.meta?'M':'',k.code].join(':'):''}
- function validateKey(k){if(!k)return '';if(!/^(Key[A-Z]|Digit[0-9]|Space|F[2-9])$/.test(k.code))return '문자·숫자·Space 또는 F2~F9 키를 사용하세요.';
-  if(['F5','F6'].includes(k.code)||k.code==='Space'&&(k.alt||k.ctrl||k.meta))return '브라우저나 운영체제에서 사용하는 키입니다.';
-  if((k.ctrl||k.meta)&&/^(Key[ACDFLNOPQRSTVWXYZ]|Digit[0-9])$/.test(k.code))return '복사·검색·탭 이동 등 기본 단축키는 사용할 수 없습니다.';
-  if(k.alt&&['F4','KeyF','KeyD'].includes(k.code))return '브라우저나 운영체제에서 사용하는 키입니다.';return '';
+ function validateKey(k){if(!k)return '';if(!/^(Key[A-Z]|Digit[0-9]|Space|F[2-9])$/.test(k.code))return L_settings_store_js.t("문자·숫자·Space 또는 F2~F9 키를 사용하세요.");
+  if(['F5','F6'].includes(k.code)||k.code==='Space'&&(k.alt||k.ctrl||k.meta))return L_settings_store_js.t("브라우저나 운영체제에서 사용하는 키입니다.");
+  if((k.ctrl||k.meta)&&/^(Key[ACDFLNOPQRSTVWXYZ]|Digit[0-9])$/.test(k.code))return L_settings_store_js.t("복사·검색·탭 이동 등 기본 단축키는 사용할 수 없습니다.");
+  if(k.alt&&['F4','KeyF','KeyD'].includes(k.code))return L_settings_store_js.t("브라우저나 운영체제에서 사용하는 키입니다.");return '';
  }
  function normalizeKey(k,fallback){if(k===null)return null;if(!k||typeof k.code!=='string')return fallback;const result={code:k.code,ctrl:!!k.ctrl,alt:!!k.alt,shift:!!k.shift,meta:!!k.meta};return validateKey(result)?fallback:result}
  function base(){let savedColors;try{savedColors=JSON.parse(legacy('sheetColors'))}catch{}const color=colors.includes(legacy('sheetColor'))?legacy('sheetColor'):'red';return {menuOrder:[...menuKeys],menuCollapsed:false,notePageSize:15,highlightPageSize:15,menus:{sheet:true,highlight:true,note:true,vocabulary:true,selection:true,translation:true},menuVisibility:{sheet:true,highlight:true,note:true,vocabulary:true,selection:false,translation:true},width:20,height:20,sheet:{color,colors:Array.isArray(savedColors)?colors.filter(c=>savedColors.includes(c)):[color],mode:legacy('sheetMode')==='all'?'all':'highlight',reveal:true,sensitivity:Object.fromEntries(colors.map(c=>[c,bounded(legacy('sensitivity:'+c)??legacy('sensitivity'),60,0,100)]))},translation:null,shortcuts:structuredClone(defaultKeys)}}
@@ -24,6 +25,6 @@
  function write(value){const settings=normalize(value);localStorage.setItem(KEY,JSON.stringify(settings));root.UserData?.changed();return settings}
  function eventKey(e){return {code:e.code,ctrl:!!e.ctrlKey,alt:!!e.altKey,shift:!!e.shiftKey,meta:!!e.metaKey}}
  function matches(e,k){return !!k&&keyId(eventKey(e))===keyId(k)}
- function label(k){if(!k)return '지정 안 함';return [k.ctrl?'Ctrl':'',k.alt?'Alt':'',k.shift?'Shift':'',k.meta?'⌘':'',k.code==='Space'?'Space':k.code.replace(/^(Key|Digit)/,'')].filter(Boolean).join(' + ')}
+ function label(k){if(!k)return L_settings_store_js.t("지정 안 함");return [k.ctrl?'Ctrl':'',k.alt?'Alt':'',k.shift?'Shift':'',k.meta?'⌘':'',k.code==='Space'?'Space':k.code.replace(/^(Key|Digit)/,'')].filter(Boolean).join(' + ')}
  root.AppSettings={read,write,normalize,menuOrder,validateKey,keyId,eventKey,matches,label,defaultKeys};
 })(globalThis);

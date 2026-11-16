@@ -1,9 +1,11 @@
-> **Google Drive 동기화 베타 · 1.4.1-beta.1**
-> 이 브랜치는 `beta/google-drive-sync`입니다. 기존 서비스와 `main`은 1.0.0을 유지합니다. 별도 [웹 베타](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/)에서 여러 기기 검증을 진행합니다. 기존 서비스의 기록은 자동 이전되지 않습니다. [베타 실행·설정 안내](docs/GOOGLE-DRIVE-BETA.md)
+> **Google Drive 동기화 베타 · 1.5.0-beta.1**
+> 이 브랜치는 `beta/google-drive-sync`입니다. 공개 `main`은 1.1.0이며, i18n만 함께 반영했습니다. Drive 동기화는 베타에만 포함합니다. 별도 [웹 베타](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/)에서 여러 기기 검증을 진행합니다. 기존 서비스의 기록은 자동 이전되지 않습니다. [베타 실행·설정 안내](docs/GOOGLE-DRIVE-BETA.md)
 
 <p align="center"><img src="public/icon-192.png" width="80" alt="AKA Sheet 로고"></p>
 
 # AKA Sheet
+
+한국어 · [English](README.en.md) · [日本語](README.ja.md)
 
 **책의 정답을 가리고, 선택한 부분을 읽고 기록하는 오프라인 지향 학습 리더.**
 
@@ -11,7 +13,9 @@
 
 **[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](public/releases.js) · [1.0.0 검증 기록](docs/QA-1.0.0-2026-11-16.md)
 
-현재 앱 버전 **1.0.0** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
+현재 베타 버전 **1.5.0-beta.1** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
+
+UI 언어는 **설정 → 메뉴 UI → 앱 표시 언어**에서 선택하며 다음 앱 실행부터 적용됩니다. OCR·번역·사전 언어와 독립적이고, 기존 책·메모·단어장 내용은 번역하거나 변경하지 않습니다. [i18n 구조와 검증](docs/I18N.md)
 
 ## 화면
 
@@ -39,6 +43,7 @@
 | 영역 활용 | 텍스트 추출 또는 OCR · 선택 위치의 결과 팝업과 후속 작업 |
 | 학습 기록 | 형광펜 · 텍스트/그리기 메모 · 위치 탐색기와 검색 |
 | 언어 학습 | PaddleOCR/Tesseract · 기기 내 번역 · 선택 설치형 한·영·일 사전 · 여러 단어장 |
+| UI 언어 | 한국어·영어·일본어 · 시스템 언어 감지 · 설정에서 선택 · 다음 실행부터 적용 |
 | 개인화·저장 | 메뉴 표시/순서/접힘 · 단축키 · 마지막 읽기 위치 · 수동 백업/복원 · 지원 환경의 선택 폴더 자동 저장 |
 
 ## 기술 구성
