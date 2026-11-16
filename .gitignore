@@ -3,3 +3,17 @@
 dist/dictionaries/*.tmp
 scripts/__pycache__/
 tests/node_modules/
+
+# Local tools and sensitive configuration
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# User backups and local transfer artifacts
+AKA-Sheet-auto.json
+AKA-Sheet-backup-*.json
+*.bundle
+aka-sheet-*-deploy.tar.gz
