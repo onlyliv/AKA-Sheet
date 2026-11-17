@@ -8,9 +8,9 @@
 
 일본어 한자 학습서의 빨간 정답을 디지털 적색 시트로 가리고 싶다는 필요에서 시작했습니다. PDF·EPUB·이미지 위에서 색상 숨김, OCR, 번역, 형광펜, 메모, 사전, 단어장으로 학습을 이어갈 수 있도록 확장한 개인 프로젝트입니다.
 
-**[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](dist/releases.js) · [1.2.0 검증 기록](docs/QA-1.2.0-2026-11-16.md)
+**[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](dist/releases.js) · [1.2.1 검증 기록](docs/QA-1.2.1-2026-11-16.md)
 
-현재 앱 버전 **1.2.0** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
+현재 앱 버전 **1.2.1** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
 
 UI 언어는 **설정 → 메뉴 UI → 앱 표시 언어**에서 선택하며 다음 앱 실행부터 적용됩니다. OCR·번역·사전 언어와 독립적이고, 기존 책·메모·단어장 내용은 번역하거나 변경하지 않습니다. [i18n 구조와 검증](docs/I18N.md)
 
@@ -92,7 +92,7 @@ for f in dist/*.js; do node --check "$f" || exit 1; done
 
 - `main`: GitHub에서 확인하는 현재 릴리스 소스와 관리 문서
 - `beta/local-translation`: 기존 개발 브랜치
-- `v1.2.0` 등 버전 태그: 각 앱 릴리스의 소스 경계. 이전 개발 이력을 그대로 보존합니다.
+- `v1.2.1` 등 버전 태그: 각 앱 릴리스의 소스 경계. 이전 개발 이력을 그대로 보존합니다.
 - GitHub는 소스·변경 이력 관리용이며, **서비스 호스팅은 기존 ChatGPT Sites를 유지**합니다. GitHub에 올리는 것만으로 자동 배포되지 않습니다.
 - Sites 배포는 `.openai/hosting.json`의 기존 프로젝트를 사용합니다. 별도 안정판 사이트에 임의로 병합하거나 배포하지 않습니다.
 - GitHub 원격 이름은 `github`입니다. 기존 `origin` 연결은 보존합니다. 작업 커밋을 만든 뒤 `git push github beta/local-translation`으로 개발 브랜치를 올립니다. 릴리스 태그는 의도적으로 지정해 푸시합니다.

@@ -4,7 +4,7 @@
 
 PDF・DRMのないEPUB・画像の本に対応した、オフライン志向の学習リーダーです。色付きの答えを隠し、選択した範囲を端末内で認識・翻訳し、蛍光ペン、テキスト／描画メモ、辞書、単語帳で学習できます。
 
-- [公開アプリを開く](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/) · main **1.2.0**
+- [公開アプリを開く](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/) · main **1.2.1**
 - [Drive同期ベータを開く](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.5.0-beta.1**
 
 公開版とDriveベータは別のサイト・保存領域です。Google Drive同期はベータのみに含まれます。
