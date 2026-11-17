@@ -1,8 +1,8 @@
-import './locales/catalog.js?v=1.6.0-beta.1';
-import './i18n.js?v=1.6.0-beta.1';
+import './locales/catalog.js?v=1.6.1-beta.1';
+import './i18n.js?v=1.6.1-beta.1';
 var L_translation_worker_js=globalThis.I18n||{t:(s,v)=>v?s.replace(/\{(\w+)\}/g,(m,k)=>v[k]??m):s,error:s=>s,locale:undefined};
-import './study-languages.js?v=1.6.0-beta.1';
-import './translation-text.js?v=1.6.0-beta.1';
+import './study-languages.js?v=1.6.1-beta.1';
+import './translation-text.js?v=1.6.1-beta.1';
 import {pipeline,env} from './vendor/ai/transformers.min.js';
 // Never probe a missing /models URL: static hosts may return index.html (HTTP 200).
 env.allowLocalModels=false;env.allowRemoteModels=true;env.localModelPath='/__no_local_model_files__/';env.useBrowserCache=true;

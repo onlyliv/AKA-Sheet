@@ -835,9 +835,9 @@
     "en": "Received changes waiting · Applied after your current task",
     "ja": "受信した変更の適用待ち · 作業終了後に反映"
   },
-  "기기에 저장됨 · 다음 5분 주기에 동기화": {
-    "en": "Saved on device · Syncs at the next 5-minute cycle",
-    "ja": "端末に保存済み · 次の5分周期で同期"
+  "기기에 저장됨 · 자동 동기화 대기 중": {
+    "en": "Saved on device · Waiting for automatic sync",
+    "ja": "端末に保存済み · 自動同期を待機中"
   },
   "클라우드 동기화 완료 · ": {
     "en": "Cloud sync complete · ",
@@ -863,9 +863,9 @@
     "en": "Sign in with Google",
     "ja": "Googleにログイン"
   },
-  "연결 계정 · …": {
-    "en": "Connected account · …",
-    "ja": "接続アカウント · …"
+  "연결 계정": {
+    "en": "Connected account",
+    "ja": "接続アカウント"
   },
   "기억한 계정 · …": {
     "en": "Remembered account · …",
