@@ -245,3 +245,26 @@ body[data-ui-layout="mobile"] .book-open-menu{top:calc(var(--app-safe-top) + 46p
 
 #showMenu{top:calc(var(--app-safe-top) + 8px);left:calc(var(--app-safe-left) + 8px);background:#fffdf8}
 body[data-ui-layout="mobile"] #showMenu{left:auto;right:calc(var(--app-safe-right) + 8px)}
+
+/* Vocabulary books share the reader viewport and remain local documents. */
+#vocabReaderBar{flex:none;background:#fffdf8;border-bottom:1px solid #d9dcd1;padding:8px 12px;display:grid;gap:7px;min-width:0}
+#vocabReaderBar[hidden]{display:none}
+.vocab-reader-title,.vocab-reader-options{display:flex;align-items:center;gap:7px;flex-wrap:wrap;min-width:0}
+.vocab-reader-title strong{margin-right:auto;font-size:13px;overflow-wrap:anywhere}
+#vocabReaderBar button,#vocabReaderBar select{font-size:12px;min-height:32px;padding:5px 8px}
+.vocab-reader-options label{display:flex;align-items:center;gap:5px;font-size:11px}
+.vocab-example-fields{border-top:1px solid #d9dcd1;padding:10px 0;margin-top:7px;color:#30372e}
+.vocab-example-fields summary{cursor:pointer;font-size:12px;color:#68715f}
+.vocab-example-fields label{display:block;margin:9px 0 5px}
+.vocab-example{display:grid;gap:4px;margin-top:9px;font-size:12px;white-space:pre-wrap;color:#586451}
+.vocab-example small{color:#a83c35}.vocab-table ruby{ruby-position:over;ruby-align:center}.vocab-table rt{font-size:11px}
+.vocab-word-row.single-word{grid-template-columns:1fr}
+body[data-ui-layout="mobile"] #vocabReaderBar{padding:7px 9px;gap:5px}
+body[data-ui-layout="mobile"] .vocab-reader-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px}
+body[data-ui-layout="mobile"] .vocab-reader-options label{display:grid;gap:3px;min-width:0}
+body[data-ui-layout="mobile"] .vocab-reader-options select{width:100%;min-width:0}
+body[data-ui-layout="mobile"] #vocabReaderRefresh{grid-column:1/-1}
+body[data-ui-layout="mobile"] #vocabExampleFields{display:block}
+.vocab-reader-options[hidden]{display:none!important}
+body[data-ui-layout="mobile"] #vocabReaderBar .vocab-reader-title{gap:5px}
+body[data-ui-layout="mobile"] #vocabReaderBar .vocab-reader-title strong{font-size:12px}

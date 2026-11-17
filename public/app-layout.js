@@ -14,7 +14,7 @@
   const toolbar=document.querySelector('aside .toolbar')||E('mobilePanel-book').querySelector('.toolbar');
   if(mobile()){
    for(const [key,ids]of Object.entries(groups))for(const id of ids){move(E(id),E('mobilePanel-'+key));E(id).open=true}
-   move(toolbar,E('mobilePanel-book'));
+   move(toolbar,E('mobilePanel-book'));if(E('vocabReaderOptions')?.parentNode)move(E('vocabReaderOptions'),E('mobilePanel-book'));
    const layoutRow=toolbar.querySelector('.layout-row');move(toolbar.querySelector('.zoom'),layoutRow);
    move(E('highlightCount'),E('mobileCounterHighlight'));move(E('noteCount'),E('mobileCounterNote'));
    move(E('openSettings'),document.querySelector('.brand-row'));

@@ -2560,8 +2560,8 @@
     "ja": "単語帳"
   },
   "단어장을 열지 못했습니다: ": {
-    "en": "Could not open vocabulary: ",
-    "ja": "単語帳を開けません: "
+    "en": "Could not open the vocabulary book: ",
+    "ja": "単語帳を開けませんでした: "
   },
   " / 전체 ": {
     "en": " / Total ",
@@ -4418,5 +4418,117 @@
   "PC에서는 메뉴 경계를 드래그해 너비를 조절할 수 있습니다. 모바일 메뉴 높이는 내용에 맞춰 자동으로 조절됩니다.": {
     "en": "Drag the PC menu edge to adjust its width. Mobile menu height fits its contents automatically.",
     "ja": "PCではメニューの境界をドラッグして幅を調整できます。モバイルでは内容に合わせて高さを自動調整します。"
+  },
+  "같은 단어·뜻·예문이 이미 저장돼 있습니다.": {
+    "en": "This word, meaning and example are already saved.",
+    "ja": "同じ単語・意味・例文が保存されています。"
+  },
+  "단어·뜻·언어와 예문 길이(각 4,000자 이내)를 확인하세요.": {
+    "en": "Check the word, meaning, languages and example lengths (up to 4,000 characters each).",
+    "ja": "単語・意味・言語と例文の長さ（各4,000文字以内）を確認してください。"
+  },
+  "단어·뜻·예문 검색": {
+    "en": "Search words, meanings and examples",
+    "ja": "単語・意味・例文を検索"
+  },
+  "단어순": {
+    "en": "Word",
+    "ja": "単語順"
+  },
+  "단어장 관리": {
+    "en": "Manage vocabulary",
+    "ja": "単語帳を管理"
+  },
+  "단어장 데이터 형식이 변경되었습니다. 앱을 다시 열어 최신 버전으로 동기화하세요.": {
+    "en": "The vocabulary format has changed. Reopen the app to sync with the latest version.",
+    "ja": "単語帳の形式が変更されました。アプリを開き直し、最新版で同期してください。"
+  },
+  "단어장 변경 내용 반영": {
+    "en": "Apply vocabulary changes",
+    "ja": "単語帳の変更を反映"
+  },
+  "단어장 원문": {
+    "en": "Vocabulary text",
+    "ja": "単語帳の原文"
+  },
+  "단어장 책 설정": {
+    "en": "Vocabulary book settings",
+    "ja": "単語帳の表示設定"
+  },
+  "단어장 학습 본문": {
+    "en": "Vocabulary study content",
+    "ja": "単語帳の学習本文"
+  },
+  "보기 형식": {
+    "en": "Layout",
+    "ja": "表示形式"
+  },
+  "열린 단어장이 삭제되어 이전 책으로 돌아갔습니다.": {
+    "en": "This vocabulary book was deleted. Returned to the previous book.",
+    "ja": "開いていた単語帳が削除されたため、前の本に戻りました。"
+  },
+  "예문": {
+    "en": "Example",
+    "ja": "例文"
+  },
+  "예문 / 해석": {
+    "en": "Example / translation",
+    "ja": "例文 / 訳"
+  },
+  "예문 추가 · 선택": {
+    "en": "Add an example · optional",
+    "ja": "例文を追加・任意"
+  },
+  "예문 해석": {
+    "en": "Example translation",
+    "ja": "例文の訳"
+  },
+  "저장 순서": {
+    "en": "Saved order",
+    "ja": "保存順"
+  },
+  "저장한 단어장을 책으로 보기": {
+    "en": "Read a saved vocabulary book",
+    "ja": "保存した単語帳を本として読む"
+  },
+  "정렬": {
+    "en": "Sort",
+    "ja": "並び順"
+  },
+  "책으로 돌아가기": {
+    "en": "Back to book",
+    "ja": "本に戻る"
+  },
+  "책으로 열 단어가 없습니다.": {
+    "en": "There are no words to open as a book.",
+    "ja": "本として開く単語がありません。"
+  },
+  "책으로 열기": {
+    "en": "Read as book",
+    "ja": "本として開く"
+  },
+  "페이지당 단어 수": {
+    "en": "Words per page",
+    "ja": "1ページの単語数"
+  },
+  "학습표형": {
+    "en": "Study table",
+    "ja": "学習表"
+  },
+  "한 단어형": {
+    "en": "Single word",
+    "ja": "1単語"
+  },
+  "현재 작업을 저장하거나 취소한 뒤 단어장을 여세요.": {
+    "en": "Save or cancel your current work before opening the vocabulary book.",
+    "ja": "作業を保存またはキャンセルしてから単語帳を開いてください。"
+  },
+  "현재 작업을 저장하거나 취소한 뒤 책으로 돌아가세요.": {
+    "en": "Save or cancel your current work before returning to the book.",
+    "ja": "作業を保存またはキャンセルしてから本に戻ってください。"
+  },
+  "후리가나 · 선택": {
+    "en": "Furigana · optional",
+    "ja": "ふりがな・任意"
   }
 }
