@@ -4378,5 +4378,45 @@
   "EPUB 배치가 달라 이전 필기를 숨겼습니다. 원래 배치로 돌아가면 다시 표시됩니다. 이전 필기는 보존됩니다.": {
     "en": "EPUB layout changed, so earlier ink is hidden. It will reappear in its original layout. All earlier ink is preserved.",
     "ja": "EPUBの配置が変わったため以前の筆記を隠しています。元の配置に戻ると再表示します。以前の筆記は保持されます。"
+  },
+  "PC": {
+    "en": "PC",
+    "ja": "PC"
+  },
+  "모바일": {
+    "en": "Mobile",
+    "ja": "モバイル"
+  },
+  "메모/단어장": {
+    "en": "Notes / Words",
+    "ja": "メモ・単語帳"
+  },
+  "책 설정": {
+    "en": "Book",
+    "ja": "本の設定"
+  },
+  "화면 모드 전환": {
+    "en": "Switch screen layout",
+    "ja": "画面レイアウトの切り替え"
+  },
+  "학습 시트 켜짐": {
+    "en": "Study sheet on",
+    "ja": "学習シート ON"
+  },
+  "학습 시트 꺼짐": {
+    "en": "Study sheet off",
+    "ja": "学習シート OFF"
+  },
+  "현재 작업을 완료한 뒤 화면 모드를 전환하세요.": {
+    "en": "Finish the current task before switching layouts.",
+    "ja": "現在の操作を完了してから画面を切り替えてください。"
+  },
+  "화면 설정을 저장하지 못했습니다. 현재 화면에는 적용했습니다.": {
+    "en": "The layout was applied, but could not be saved.",
+    "ja": "画面に適用しましたが、設定を保存できませんでした。"
+  },
+  "PC에서는 메뉴 경계를 드래그해 너비를 조절할 수 있습니다. 모바일 메뉴 높이는 내용에 맞춰 자동으로 조절됩니다.": {
+    "en": "Drag the PC menu edge to adjust its width. Mobile menu height fits its contents automatically.",
+    "ja": "PCではメニューの境界をドラッグして幅を調整できます。モバイルでは内容に合わせて高さを自動調整します。"
   }
 }
