@@ -233,3 +233,15 @@ body[data-ui-layout="mobile"] #settingsDialog>.log-heading h2{font-size:20px}bod
 
 body[data-ui-layout="mobile"] #mobilePanel-book .zoom{grid-column:1/-1}
 body[data-ui-layout="mobile"] #quickStatus.mobile-initial-hint{display:none}
+
+/* Keep the reader outside iOS status-bar / home-indicator overlays.
+   Insets are applied once to the app shell, including collapsed-menu mode. */
+:root{--app-safe-top:env(safe-area-inset-top,0px);--app-safe-right:env(safe-area-inset-right,0px);--app-safe-bottom:env(safe-area-inset-bottom,0px);--app-safe-left:env(safe-area-inset-left,0px)}
+html{background:#fffdf8}
+body{padding:var(--app-safe-top) var(--app-safe-right) var(--app-safe-bottom) var(--app-safe-left);background:#fffdf8}
+main{height:100%;min-height:0}
+.workspace{background:#e8e7df}
+body[data-ui-layout="mobile"] .book-open-menu{top:calc(var(--app-safe-top) + 46px);right:calc(var(--app-safe-right) + 8px)}
+
+#showMenu{top:calc(var(--app-safe-top) + 8px);left:calc(var(--app-safe-left) + 8px);background:#fffdf8}
+body[data-ui-layout="mobile"] #showMenu{left:auto;right:calc(var(--app-safe-right) + 8px)}
