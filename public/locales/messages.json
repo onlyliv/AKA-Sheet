@@ -184,8 +184,8 @@
     "ja": "PaddleOCRがタイムアウトしました。範囲を小さくするかTesseractを使ってください。"
   },
   "실행 취소": {
-    "en": "Cancel task",
-    "ja": "実行をキャンセル"
+    "en": "Undo",
+    "ja": "元に戻す"
   },
   "PaddleOCR 실행 실패. 브라우저 메모리와 호환성을 확인하세요.": {
     "en": "PaddleOCR failed. Check browser memory and compatibility.",
@@ -4302,5 +4302,81 @@
   "{model} 모델을 삭제할까요? 책과 설정은 유지하며 다시 사용하려면 다운로드해야 합니다.": {
     "en": "Delete the {model} model? Books and settings are preserved. Download the model again to reuse it.",
     "ja": "{model}モデルを削除しますか？本と設定は保持されます。再利用にはダウンロードが必要です。"
+  },
+  "그리기 모드": {
+    "en": "Drawing mode",
+    "ja": "描画モード"
+  },
+  "필기 저장 중…": {
+    "en": "Saving ink…",
+    "ja": "筆記を保存中…"
+  },
+  "기기에 저장됨": {
+    "en": "Saved on this device",
+    "ja": "端末に保存済み"
+  },
+  "다른 창의 필기를 보존하고 이번 필기를 별도로 저장했습니다.": {
+    "en": "Another window changed this page. Its ink was preserved and your ink was saved separately.",
+    "ja": "別の画面の筆記を保持し、今回の筆記を別に保存しました。"
+  },
+  "필기를 저장하지 못했습니다. 완료를 눌러 다시 시도하세요.": {
+    "en": "Could not save ink. Choose Done to retry.",
+    "ja": "筆記を保存できません。「完了」を押して再試行してください。"
+  },
+  "현재 작업을 완료한 뒤 그리기 모드를 켜세요.": {
+    "en": "Finish the current task before entering Drawing mode.",
+    "ja": "現在の作業を終えてから描画モードをオンにしてください。"
+  },
+  "이 페이지의 필기 한도에 도달했습니다.": {
+    "en": "This page has reached its ink limit.",
+    "ja": "このページの筆記上限に達しました。"
+  },
+  "필기 저장을 완료한 뒤 책을 변경하세요.": {
+    "en": "Finish saving ink before changing books.",
+    "ja": "筆記の保存を完了してから本を変更してください。"
+  },
+  "페이지 필기": {
+    "en": "Page ink",
+    "ja": "ページの筆記"
+  },
+  "그리기 모드를 종료한 뒤 이 기능을 사용하세요.": {
+    "en": "Exit Drawing mode before using this feature.",
+    "ja": "描画モードを終了してからこの機能を使ってください。"
+  },
+  "그리기 모드 대신 그리기 메모 사용": {
+    "en": "Use drawing notes instead of Drawing mode",
+    "ja": "描画モードの代わりに描画メモを使用"
+  },
+  "OFF: 페이지 전체에 필기하는 그리기 모드 · ON: 영역을 지정하는 기존 그리기 메모. 저장된 필기는 모두 유지됩니다.": {
+    "en": "OFF: draw across the page. ON: use the original area-based drawing notes. All saved ink is preserved.",
+    "ja": "OFF: ページ全体に筆記。ON: 従来の範囲指定の描画メモを使用。保存済みの筆記はすべて保持します。"
+  },
+  "페이지 전체 필기 영역": {
+    "en": "Whole-page drawing surface",
+    "ja": "ページ全体の筆記領域"
+  },
+  "그리기 도구": {
+    "en": "Drawing tools",
+    "ja": "描画ツール"
+  },
+  "그리기 도구 이동": {
+    "en": "Move drawing tools",
+    "ja": "描画ツールを移動"
+  },
+  "드래그하거나 방향키로 도구 이동": {
+    "en": "Drag or use arrow keys to move the tools",
+    "ja": "ドラッグまたは矢印キーでツールを移動"
+  },
+  "펜 색상": {
+    "en": "Pen color",
+    "ja": "ペンの色"
+  },
+  "검정": {
+    "en": "Black",
+    "ja": "黒"
+  },
+  "EPUB 배치가 달라 이전 필기를 숨겼습니다. 원래 배치로 돌아가면 다시 표시됩니다. 이전 필기는 보존됩니다.": {
+    "en": "EPUB layout changed, so earlier ink is hidden. It will reappear in its original layout. All earlier ink is preserved.",
+    "ja": "EPUBの配置が変わったため以前の筆記を隠しています。元の配置に戻ると再表示します。以前の筆記は保持されます。"
   }
 }

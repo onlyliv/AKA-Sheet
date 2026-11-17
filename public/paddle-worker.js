@@ -1,8 +1,8 @@
-import './locales/catalog.js?v=1.5.0-beta.1';
-import './i18n.js?v=1.5.0-beta.1';
+import './locales/catalog.js?v=1.6.0-beta.1';
+import './i18n.js?v=1.6.0-beta.1';
 var L_paddle_worker_js=globalThis.I18n||{t:(s,v)=>v?s.replace(/\{(\w+)\}/g,(m,k)=>v[k]??m):s,error:s=>s,locale:undefined};
 /* Inference stays local. Model/runtime fetches require a prepared cache. */
-import './recognition-auto.js?v=1.5.0-beta.1';
+import './recognition-auto.js?v=1.6.0-beta.1';
 const originalFetch=self.fetch.bind(self);
 self.fetch=async(input,init)=>{const u=new URL(typeof input==='string'?input:input.url,self.location.href);if(u.pathname.includes('/models/paddle/')||u.pathname.includes('/vendor/paddle/')){const cached=await (await caches.open('akai-paddle-024')).match(u.href);if(!cached)throw Error(L_paddle_worker_js.t("MODEL_NOT_CACHED: PaddleOCR를 모델 관리에서 준비하세요."));return cached}return originalFetch(input,init)};
 let instance=null,key='';

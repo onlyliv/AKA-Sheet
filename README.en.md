@@ -5,7 +5,7 @@
 An offline-first study reader for PDF, DRM-free EPUB and image books. Hide colored answers, recognize selected text on your device, translate, highlight, take text or drawing notes, look up dictionaries and collect vocabulary.
 
 - [Open the public app](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/) · main **1.1.0**
-- [Open Drive sync beta](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.5.0-beta.1**
+- [Open Drive sync beta](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.6.0-beta.1**
 
 The public app and the Drive beta are separate deployments and browser storage areas. Google Drive synchronization is available only in the beta.
 
@@ -30,3 +30,5 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory public
 Open `http://127.0.0.1:8765/`. Browser data is isolated by site and port. Export important learning data before moving origins or clearing site storage.
 
 For translation contributions and catalog checks, see [i18n notes](docs/I18N.md). For design decisions, limitations and development history, see the [portfolio](docs/PORTFOLIO.md).
+
+Drawing mode supports full-page ink and movable tools. Settings → Menu UI can switch the button back to regional drawing notes.

@@ -5,7 +5,7 @@
 PDF・DRMのないEPUB・画像の本に対応した、オフライン志向の学習リーダーです。色付きの答えを隠し、選択した範囲を端末内で認識・翻訳し、蛍光ペン、テキスト／描画メモ、辞書、単語帳で学習できます。
 
 - [公開アプリを開く](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/) · main **1.1.0**
-- [Drive同期ベータを開く](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.5.0-beta.1**
+- [Drive同期ベータを開く](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.6.0-beta.1**
 
 公開版とDriveベータは別のサイト・保存領域です。Google Drive同期はベータのみに含まれます。
 
@@ -30,3 +30,5 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory public
 `http://127.0.0.1:8765/`を開いてください。保存領域はサイト・ポート別です。移動やサイトデータ削除の前に大切な学習記録を書き出してください。
 
 翻訳の追加・検証は[i18n資料](docs/I18N.md)、設計と制限は[開発事例](docs/PORTFOLIO.md)を参照してください。
+
+描画モードでページ全体に書き込めます。ツールは移動でき、設定 → メニュー UIで従来の範囲指定の描画メモに切り替えられます。

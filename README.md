@@ -1,4 +1,4 @@
-> **Google Drive 동기화 베타 · 1.5.0-beta.1**
+> **Google Drive 동기화 베타 · 1.6.0-beta.1**
 > 이 브랜치는 `beta/google-drive-sync`입니다. 공개 `main`은 1.1.0이며, i18n만 함께 반영했습니다. Drive 동기화는 베타에만 포함합니다. 별도 [웹 베타](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/)에서 여러 기기 검증을 진행합니다. 기존 서비스의 기록은 자동 이전되지 않습니다. [베타 실행·설정 안내](docs/GOOGLE-DRIVE-BETA.md)
 
 <p align="center"><img src="public/icon-192.png" width="80" alt="AKA Sheet 로고"></p>
@@ -13,7 +13,7 @@
 
 **[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](public/releases.js) · [1.0.0 검증 기록](docs/QA-1.0.0-2026-11-16.md)
 
-현재 베타 버전 **1.5.0-beta.1** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
+현재 베타 버전 **1.6.0-beta.1** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
 
 UI 언어는 **설정 → 메뉴 UI → 앱 표시 언어**에서 선택하며 다음 앱 실행부터 적용됩니다. OCR·번역·사전 언어와 독립적이고, 기존 책·메모·단어장 내용은 번역하거나 변경하지 않습니다. [i18n 구조와 검증](docs/I18N.md)
 
@@ -103,3 +103,5 @@ for f in public/*.js; do node --check "$f" || exit 1; done
 - GitHub 원격 이름은 `github`입니다. 기존 `origin` 연결은 보존합니다. 작업 커밋을 만든 뒤 `git push github beta/local-translation`으로 개발 브랜치를 올립니다. 릴리스 태그는 의도적으로 지정해 푸시합니다.
 
 앱 코드와 데이터팩에는 서로 다른 외부 라이선스가 적용됩니다. NLLB는 실험용·비상업 옵션이며 가중치를 자동 다운로드하지 않습니다. 외부 구성 요소의 기존 고지와 사전 출처를 유지하세요. 공개 저장소 전환은 앱 자체에 MIT 등 재사용 라이선스를 부여하는 것을 의미하지 않습니다. 앱 자체의 별도 라이선스는 아직 지정하지 않았으며, 외부 구성 요소와 사전 데이터의 권리는 각 원저작자에게 있습니다. [외부 출처와 라이선스](THIRD_PARTY_NOTICES.md)를 확인하세요.
+
+페이지 전체에 필기하는 그리기 모드와 이동 가능한 도구 창을 지원합니다. 설정 → 메뉴 UI에서 기존 영역 그리기 메모로 전환할 수 있습니다.
