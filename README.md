@@ -1,4 +1,4 @@
-> **Google Drive 동기화 베타 · 1.9.0-beta.1**
+> **Google Drive 동기화 베타 · 1.10.0-beta.1**
 > 이 브랜치는 `beta/google-drive-sync`입니다. 공개 `main`은 1.2.2이며, 모바일 UI와 그리기 모드를 함께 반영했습니다. Drive 동기화는 베타에만 포함합니다. 별도 [웹 베타](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/)에서 여러 기기 검증을 진행합니다. 기존 서비스의 기록은 자동 이전되지 않습니다. [베타 실행·설정 안내](docs/GOOGLE-DRIVE-BETA.md)
 
 <p align="center"><img src="public/icon-192.png" width="80" alt="AKA Sheet 로고"></p>
@@ -13,7 +13,7 @@
 
 **[앱 체험하기](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/)** · **[설계와 문제 해결](docs/PORTFOLIO.md)** · [버전 이력](public/releases.js) · [1.0.0 검증 기록](docs/QA-1.0.0-2026-11-16.md)
 
-현재 베타 버전 **1.9.0-beta.1** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
+현재 베타 버전 **1.10.0-beta.1** · HTML / CSS / JavaScript · PWA · 브라우저 내 OCR·번역
 
 UI 언어는 **설정 → 메뉴 UI → 앱 표시 언어**에서 선택하며 다음 앱 실행부터 적용됩니다. OCR·번역·사전 언어와 독립적이고, 기존 책·메모·단어장 내용은 번역하거나 변경하지 않습니다. [i18n 구조와 검증](docs/I18N.md)
 

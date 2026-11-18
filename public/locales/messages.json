@@ -4606,5 +4606,97 @@
   "{page}페이지": {
     "en": "Page {page}",
     "ja": "{page}ページ"
+  },
+  "이미지 선명도 보정": {
+    "en": "Image sharpness enhancement",
+    "ja": "画像の鮮明度補正"
+  },
+  "책 화면": {
+    "en": "Reader display",
+    "ja": "読書画面"
+  },
+  "책 화면의 이미지에만 선명도와 대비를 보정합니다. 원본 파일과 OCR 입력은 변경하지 않습니다.": {
+    "en": "Enhances sharpness and contrast of images in the reader only. Original files and OCR input stay unchanged.",
+    "ja": "読書画面の画像の鮮明度とコントラストを補正します。元のファイルとOCR入力は変更しません。"
+  },
+  "변경 즉시 적용하고 이 기기에 저장합니다.": {
+    "en": "Changes apply immediately and are saved on this device.",
+    "ja": "変更はすぐに適用され、この端末に保存されます。"
+  },
+  "한국어 띄어쓰기 보정": {
+    "en": "Korean spacing correction",
+    "ja": "韓国語の分かち書き補正"
+  },
+  "한국어 OCR 결과의 띄어쓰기만 보정합니다. 처음 켜면 약 89MB의 모델과 실행 파일을 다운로드합니다. 책 화면의 선명도 보정과 독립적으로 동작합니다.": {
+    "en": "Corrects spacing in Korean OCR text only. First use downloads about 89 MB of model and runtime files. Works independently of reader image enhancement.",
+    "ja": "韓国語のOCR結果の空白だけを補正します。初回に約89MBのモデルと実行ファイルをダウンロードします。読書画面の鮮明度補正とは独立して動作します。"
+  },
+  "다운로드 / 다시 준비": {
+    "en": "Download / retry",
+    "ja": "ダウンロード / 再試行"
+  },
+  "모델 삭제": {
+    "en": "Delete model",
+    "ja": "モデルを削除"
+  },
+  "이 브라우저는 띄어쓰기 보정을 지원하지 않습니다.": {
+    "en": "This browser does not support spacing correction.",
+    "ja": "このブラウザーは分かち書き補正に対応していません。"
+  },
+  "모델 다운로드에 실패했습니다. 다시 시도하세요.": {
+    "en": "Model download failed. Please retry.",
+    "ja": "モデルのダウンロードに失敗しました。再試行してください。"
+  },
+  "띄어쓰기 모델 다운로드 중 · {percent}%": {
+    "en": "Downloading spacing model · {percent}%",
+    "ja": "分かち書きモデルをダウンロード中 · {percent}%"
+  },
+  "모델 파일 확인에 실패했습니다. 다시 다운로드하세요.": {
+    "en": "Model verification failed. Download it again.",
+    "ja": "モデルファイルの検証に失敗しました。再ダウンロードしてください。"
+  },
+  "띄어쓰기 보정 사용 가능 · 모델을 기기에 저장했습니다.": {
+    "en": "Spacing correction ready · model saved on this device.",
+    "ja": "分かち書き補正を使用できます · モデルを端末に保存しました。"
+  },
+  "다운로드를 취소했습니다. 다시 켜면 이어서 준비합니다.": {
+    "en": "Download cancelled. Enable again to resume preparation.",
+    "ja": "ダウンロードをキャンセルしました。再びオンにすると準備を再開します。"
+  },
+  "띄어쓰기 보정 준비 실패: {reason}": {
+    "en": "Spacing correction setup failed: {reason}",
+    "ja": "分かち書き補正の準備に失敗しました: {reason}"
+  },
+  "띄어쓰기 보정 꺼짐": {
+    "en": "Spacing correction off",
+    "ja": "分かち書き補正オフ"
+  },
+  "한국어 OCR 결과에 띄어쓰기 보정을 적용합니다.": {
+    "en": "Spacing correction applies to Korean OCR results.",
+    "ja": "韓国語のOCR結果に分かち書き補正を適用します。"
+  },
+  "띄어쓰기 모델을 삭제했습니다.": {
+    "en": "Spacing model deleted.",
+    "ja": "分かち書きモデルを削除しました。"
+  },
+  "띄어쓰기 보정을 건너뛰고 OCR 원문을 표시합니다.": {
+    "en": "Showing original OCR text without spacing correction.",
+    "ja": "分かち書き補正をスキップし、OCRの元の結果を表示します。"
+  },
+  "띄어쓰기 모델이 없습니다. OCR 원문을 표시합니다. 설정에서 다시 다운로드하세요.": {
+    "en": "Spacing model unavailable. Showing original OCR text. Download the model again in settings.",
+    "ja": "分かち書きモデルがありません。OCRの元の結果を表示します。設定から再ダウンロードしてください。"
+  },
+  "한국어 띄어쓰기 보정 중…": {
+    "en": "Correcting Korean spacing…",
+    "ja": "韓国語の分かち書きを補正中…"
+  },
+  "보정 전 OCR 원문을 복원했습니다.": {
+    "en": "Restored original OCR text.",
+    "ja": "補正前のOCR結果に戻しました。"
+  },
+  "보정 전 OCR 원문으로 되돌리기": {
+    "en": "Restore original OCR text",
+    "ja": "補正前のOCR結果に戻す"
   }
 }

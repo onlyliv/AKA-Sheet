@@ -270,3 +270,9 @@ body[data-ui-layout="mobile"] #vocabReaderBar .vocab-reader-title{gap:5px}
 body[data-ui-layout="mobile"] #vocabReaderBar .vocab-reader-title strong{font-size:12px}
 
 .first-sync-review{padding:14px;border:1px solid #c9a74d;border-radius:10px;background:#fff9e9}.first-sync-review[hidden]{display:none}.first-sync-review h4{margin-top:0}.first-sync-review p{overflow-wrap:anywhere}#driveFirstBackups{margin-top:12px}#driveFirstBackups[hidden]{display:none}
+
+/* Reader enhancement controls share one state in PC, mobile and settings. */
+.reading-sharpen-toggle{width:100%;margin:6px 0;min-height:36px}
+.reading-sharpen-toggle[aria-pressed="true"]{background:var(--sheet-soft);color:var(--sheet-accent);border-color:var(--sheet-border);box-shadow:inset 0 0 0 1px var(--sheet-border)}
+.spacing-options{border-top:1px solid #d8dbd2;margin-top:18px;padding-top:16px}
+body[data-ui-layout="mobile"] .reading-sharpen-toggle{margin:4px 0;min-height:34px}

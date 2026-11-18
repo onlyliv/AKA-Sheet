@@ -1,0 +1,166 @@
+{
+  "version": "kiwi-nlp-0.24.1-model-0.24.0-cong",
+  "assets": [
+    {
+      "url": "vendor/kiwi/build/kiwi-wasm.js",
+      "bytes": 115070,
+      "sha256": "a23768a18b24dcbfd6a70bb4475ecaff6ff239d7f30d849211ea7954eda5f988"
+    },
+    {
+      "url": "vendor/kiwi/build-args.js",
+      "bytes": 15,
+      "sha256": "49bfbc0d7089c32ec4cea2d67165ee31363737dabd72a6bfa3396bfd0b79e144"
+    },
+    {
+      "url": "vendor/kiwi/index.js",
+      "bytes": 95,
+      "sha256": "bc6639f3788a6de35e40777079ec6bae0ea9de98bbfffd00ae2e7114a937d389"
+    },
+    {
+      "url": "vendor/kiwi/kiwi-api.js",
+      "bytes": 11,
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "url": "vendor/kiwi/kiwi-builder.js",
+      "bytes": 4701,
+      "sha256": "9a4e5fbdfce29e7a7eb7ab5d2a366405d804da4ee49a826d9ccc924ff636cb74"
+    },
+    {
+      "url": "vendor/kiwi/kiwi-wasm.wasm",
+      "bytes": 5445075,
+      "sha256": "21acf80b3af81a17f975a1d3fcb0d2ab9b499acd72283f9cc6fd09b96110a425"
+    },
+    {
+      "url": "vendor/kiwi/kiwi.js",
+      "bytes": 1969,
+      "sha256": "e66c96d0cf120db2eff475484e1b93561e7b9fe64ebea67df0c7b92230c7118e"
+    },
+    {
+      "url": "vendor/kiwi/util.js",
+      "bytes": 11,
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "url": "models/kiwi-024/combiningRule.txt.gz.0",
+      "bytes": 1631,
+      "sha256": "3115a255d5b66f46742eb556fd65092db8ff12cf1754ac9a4094775e29d8306c"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.0",
+      "bytes": 8388608,
+      "sha256": "7acec0614b024eb182d1e7064b7543721b8c9f5abf2b5166d6ea44cdc1c1e88b"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.1",
+      "bytes": 8388608,
+      "sha256": "34aa6b7db48b1f7e71d72adc5403331d3f84eebb0a1fd7edccae31cc3f09dd27"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.2",
+      "bytes": 8388608,
+      "sha256": "0d8392cabf0626d60646bad56131577cd6ce624b5a90476192b5e06da10232cf"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.3",
+      "bytes": 8388608,
+      "sha256": "a2eaa0b4ba5d73ea93a8594f01693e12dee4bc0c35a43b1649d8a8dd0279352b"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.4",
+      "bytes": 8388608,
+      "sha256": "40f29c10bae794fed78a8ca6c44a82ca002952673e487648237abd0a1ddc5b17"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.5",
+      "bytes": 8388608,
+      "sha256": "41f37111c1c5c1aa61e00188a218a1cfdfb74bb32e6a0e9dafefafc982ab23f8"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.6",
+      "bytes": 8388608,
+      "sha256": "bf4b68e2a1a83a6a6e898fd6be55c719ca0a73081eae2077512301ca25afe51c"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.7",
+      "bytes": 8388608,
+      "sha256": "6d4293f21399add8a351894507e57af78f5ef19e04b31b77d057f468fd894528"
+    },
+    {
+      "url": "models/kiwi-024/cong.mdl.gz.8",
+      "bytes": 5190835,
+      "sha256": "b7a0d48185bff99fe407f0af7cfb84931a4f10b7d5fb7ced305b60ab07937490"
+    },
+    {
+      "url": "models/kiwi-024/extract.mdl.gz.0",
+      "bytes": 14263,
+      "sha256": "f25dae7ea6f595007630450c7a18e507b680ac9500a216b0f551451a6eba4e39"
+    },
+    {
+      "url": "models/kiwi-024/nounchr.mdl.gz.0",
+      "bytes": 8388608,
+      "sha256": "ad9a4475ba43d87e38acc01396ebc3554515509dd4e2ccdad2f0d65a98f9b1a6"
+    },
+    {
+      "url": "models/kiwi-024/nounchr.mdl.gz.1",
+      "bytes": 89512,
+      "sha256": "c889c821bfd8498e0451312f50950049c74133a4a92d7b7b275377564765c4d2"
+    },
+    {
+      "url": "models/kiwi-024/sj.morph.gz.0",
+      "bytes": 2120592,
+      "sha256": "93fd605d33338390d1606b72c4dec727973c03f814d3b44a226b866ac72ac6b6"
+    }
+  ],
+  "files": [
+    {
+      "name": "combiningRule.txt",
+      "bytes": 3611,
+      "sha256": "4f78771daa3dd8a52aa0b5c8824396578ece8e8bbaa11cf3add82721b046bc15",
+      "chunks": [
+        "models/kiwi-024/combiningRule.txt.gz.0"
+      ]
+    },
+    {
+      "name": "cong.mdl",
+      "bytes": 75854705,
+      "sha256": "5f64105e45f04e5313f41c0ff1db5fe629780c8076c4a6fd3b1b2cf78c2cc934",
+      "chunks": [
+        "models/kiwi-024/cong.mdl.gz.0",
+        "models/kiwi-024/cong.mdl.gz.1",
+        "models/kiwi-024/cong.mdl.gz.2",
+        "models/kiwi-024/cong.mdl.gz.3",
+        "models/kiwi-024/cong.mdl.gz.4",
+        "models/kiwi-024/cong.mdl.gz.5",
+        "models/kiwi-024/cong.mdl.gz.6",
+        "models/kiwi-024/cong.mdl.gz.7",
+        "models/kiwi-024/cong.mdl.gz.8"
+      ]
+    },
+    {
+      "name": "extract.mdl",
+      "bytes": 17370,
+      "sha256": "a0c92ffc051e43ae497845cdb8d4c8b9e2f359893cb55c67279c76d1d531ee17",
+      "chunks": [
+        "models/kiwi-024/extract.mdl.gz.0"
+      ]
+    },
+    {
+      "name": "nounchr.mdl",
+      "bytes": 9734234,
+      "sha256": "4b687e36836dd60dcb7addcfcf369ac082b339bab76549574ac1ce2b7ccd6836",
+      "chunks": [
+        "models/kiwi-024/nounchr.mdl.gz.0",
+        "models/kiwi-024/nounchr.mdl.gz.1"
+      ]
+    },
+    {
+      "name": "sj.morph",
+      "bytes": 8462892,
+      "sha256": "d0af27b3863799cc2058f66c8058cb2bc0d16e8ae0daaf42c7739b4e375523d7",
+      "chunks": [
+        "models/kiwi-024/sj.morph.gz.0"
+      ]
+    }
+  ]
+}

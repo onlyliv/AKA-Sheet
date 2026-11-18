@@ -1,0 +1,13 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),{webcrypto}=require('node:crypto');
+const elements=new Map(),E=id=>{if(!elements.has(id))elements.set(id,{hidden:false,checked:false,disabled:false,textContent:''});return elements.get(id)};
+const data=new TextEncoder().encode('export const test=1;'),url='https://app.invalid/vendor/kiwi/test.js';
+const map=new Map(),cache={match:async k=>map.get(k)?.clone(),put:async(k,r)=>map.set(k,r.clone()),delete:async k=>map.delete(k),keys:async()=>[...map.keys()]};
+let calls=0,saved={koreanSpacing:false};
+const scope={URL,Response,Blob,TextEncoder,Uint8Array,AbortController,DOMException,DecompressionStream,crypto:webcrypto,Worker:class{},location:{href:'https://app.invalid/'},document:{getElementById:E},AppSettings:{read:()=>({...saved}),write:s=>saved=s},SettingsUI:{toast(){}},setTimeout,clearTimeout,caches:{open:async()=>cache,delete:async()=>{map.clear();return true}},fetch:async path=>{calls++;return path.endsWith('manifest.json')?Response.json(manifest):new Response(data)}};
+let manifest;
+(async()=>{manifest={assets:[{url:'vendor/kiwi/test.js',bytes:data.length,sha256:Buffer.from(await webcrypto.subtle.digest('SHA-256',data)).toString('hex')}],files:[]};
+vm.createContext(scope);vm.runInContext(fs.readFileSync('public/korean-spacing-core.js','utf8'),scope);vm.runInContext(fs.readFileSync('public/korean-spacing.js','utf8'),scope);
+assert.equal(calls,0);assert.equal(scope.KoreanSpacing.enabled(),false);await scope.KoreanSpacing.set(true);assert(saved.koreanSpacing);assert((await scope.KoreanSpacing.status()).ready);assert.equal((await cache.match(url)).headers.get('content-type'),'text/javascript');
+await scope.KoreanSpacing.set(false);const n=calls;await scope.KoreanSpacing.set(true);assert.equal(calls,n,'cached re-enable must not fetch');await scope.KoreanSpacing.remove();assert(!saved.koreanSpacing);assert.equal(map.size,0);
+manifest.assets[0].sha256='bad';await scope.KoreanSpacing.set(true);assert(!saved.koreanSpacing);assert(!(await scope.KoreanSpacing.status()).ready);assert.match(E('spacingStatus').textContent,/준비 실패/);assert.equal(map.size,0);console.log('다운로드 미동의 네트워크 0·파일 해시·JS MIME·캐시 재사용·삭제·손상 모델 활성 차단 검사 통과');
+})().catch(e=>{console.error(e);process.exitCode=1});
