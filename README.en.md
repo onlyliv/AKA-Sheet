@@ -5,7 +5,7 @@
 An offline-first study reader for PDF, DRM-free EPUB and image books. Hide colored answers, recognize selected text on your device, translate, highlight, take text or drawing notes, look up dictionaries and collect vocabulary.
 
 - [Open the public app](https://akai-sheet-beta-local-7k29.g-flow.chatgpt.site/) · main **1.1.0**
-- [Open Drive sync beta](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.10.0-beta.2**
+- [Open Drive sync beta](https://aka-sheet-drive-beta-7k29.g-flow.chatgpt.site/) · beta **1.10.1-beta.1**
 
 The public app and the Drive beta are separate deployments and browser storage areas. Google Drive synchronization is available only in the beta.
 

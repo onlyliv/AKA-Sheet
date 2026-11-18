@@ -4698,5 +4698,13 @@
   "보정 전 OCR 원문으로 되돌리기": {
     "en": "Restore original OCR text",
     "ja": "補正前のOCR結果に戻す"
+  },
+  "모델 파일 목록 확인 중…": {
+    "en": "Checking model file list…",
+    "ja": "モデルファイル一覧を確認中…"
+  },
+  "모델 다운로드 실패: {file} (HTTP {status})": {
+    "en": "Model download failed: {file} (HTTP {status})",
+    "ja": "モデルのダウンロードに失敗しました: {file} (HTTP {status})"
   }
 }
