@@ -28,3 +28,5 @@ Kiwi WASM (`kiwi-nlp` 0.24.1) and the 0.24.0 base CoNg model: Apache-2.0.
 Source: https://github.com/bab2min/Kiwi (tag v0.24.1); model release: v0.24.0.
 Runtime JS/WASM are unmodified. Model files are losslessly gzip-compressed and split into 8 MiB chunks; optional default/multi/typo/dialect dictionaries are excluded. Models and runtime download only on user request.
 License and upstream NOTICE, including NIKL corpus attribution, are distributed under `public/licenses/Kiwi-*`. NOTICE lists Eigen (MPL-2.0), cpp-btree/streamvbyte (Apache-2.0), cpuinfo (BSD-2-Clause), mimalloc and nlohmann/json (MIT). Their license texts accompany the distribution. Upstream source, including unmodified Eigen headers used by the WASM build, is available from https://github.com/bab2min/Kiwi/tree/v0.24.1/third_party .
+
+The optional model chunks are served from the immutable public AKA-Sheet commit 45c88d9d8961dd9a4c3d9947eac1b5143993b523 on raw.githubusercontent.com, only after explicit user enablement. The runtime and license notices remain served by the app.
