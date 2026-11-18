@@ -268,3 +268,5 @@ body[data-ui-layout="mobile"] #vocabExampleFields{display:block}
 .vocab-reader-options[hidden]{display:none!important}
 body[data-ui-layout="mobile"] #vocabReaderBar .vocab-reader-title{gap:5px}
 body[data-ui-layout="mobile"] #vocabReaderBar .vocab-reader-title strong{font-size:12px}
+
+.first-sync-review{padding:14px;border:1px solid #c9a74d;border-radius:10px;background:#fff9e9}.first-sync-review[hidden]{display:none}.first-sync-review h4{margin-top:0}.first-sync-review p{overflow-wrap:anywhere}#driveFirstBackups{margin-top:12px}#driveFirstBackups[hidden]{display:none}
