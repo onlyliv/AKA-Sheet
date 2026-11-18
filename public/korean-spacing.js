@@ -28,7 +28,7 @@
   if(working)return {text,original:text,warning:t('띄어쓰기 보정을 건너뛰고 OCR 원문을 표시합니다.')};
   if(!(await status()).ready)return {text,original:text,warning:t('띄어쓰기 모델이 없습니다. OCR 원문을 표시합니다. 설정에서 다시 다운로드하세요.')};
   working=true;onProgress(t('한국어 띄어쓰기 보정 중…'));const id=++job;
-  try{if(!worker)worker=new Worker('./korean-spacing-worker.js?v=1.10.1-beta.1',{type:'module'});
+  try{if(!worker)worker=new Worker('./korean-spacing-worker.js?v=1.11.0-beta.1',{type:'module'});
    const result=await new Promise((resolve,reject)=>{const timer=setTimeout(()=>{stop();reject(Error('TIMEOUT'))},30000);pending={reject:e=>{clearTimeout(timer);reject(e)}};worker.onerror=()=>{clearTimeout(timer);reject(Error('WORKER_ERROR'))};worker.onmessage=({data})=>{if(data.id!==id)return;clearTimeout(timer);data.error?reject(Error(data.error)):resolve(data.text)};worker.postMessage({id,text})});
    return {text:KoreanSpacingCore.characters(result)===KoreanSpacingCore.characters(text)?result:text,original:text};
   }catch(e){if(id===job)stop();return {text,original:text,warning:t('띄어쓰기 보정을 건너뛰고 OCR 원문을 표시합니다.')};}finally{if(id===job){pending=null;working=false}}

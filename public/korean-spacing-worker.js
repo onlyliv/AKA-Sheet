@@ -1,5 +1,5 @@
 /* All text processing stays on-device. No model downloads from this worker. */
-import './korean-spacing-core.js';
+import './korean-spacing-core.js?v=1.11.0-beta.1';
 const CACHE='akai-spacing-024',absolute=p=>new URL(p,self.location.href).href;
 let kiwi=null;
 async function cached(path){const r=await(await caches.open(CACHE)).match(absolute(path));if(!r)throw Error('SPACING_NOT_READY');return r}

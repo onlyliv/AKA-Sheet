@@ -4706,5 +4706,137 @@
   "모델 다운로드 실패: {file} (HTTP {status})": {
     "en": "Model download failed: {file} (HTTP {status})",
     "ja": "モデルのダウンロードに失敗しました: {file} (HTTP {status})"
+  },
+  "텍스트 추출": {
+    "en": "Text extraction",
+    "ja": "テキスト抽出"
+  },
+  "TXT 내보내기": {
+    "en": "Export TXT",
+    "ja": "TXTを書き出す"
+  },
+  "전체 결과 복사": {
+    "en": "Copy full result",
+    "ja": "結果全体をコピー"
+  },
+  "추출 결과": {
+    "en": "Extracted text",
+    "ja": "抽出結果"
+  },
+  "추출 범위": {
+    "en": "Extraction scope",
+    "ja": "抽出範囲"
+  },
+  "추출 시작": {
+    "en": "Start extraction",
+    "ja": "抽出を開始"
+  },
+  "추출 취소": {
+    "en": "Cancel extraction",
+    "ja": "抽出をキャンセル"
+  },
+  "현재 페이지": {
+    "en": "Current page",
+    "ja": "現在のページ"
+  },
+  "파일 전체": {
+    "en": "Entire file",
+    "ja": "ファイル全体"
+  },
+  "페이지 {page}": {
+    "en": "Page {page}",
+    "ja": "ページ {page}"
+  },
+  "텍스트가 없는 페이지는 OCR로 인식": {
+    "en": "Use OCR for pages without text",
+    "ja": "テキストのないページをOCRで認識"
+  },
+  "추출은 기기 안에서 실행합니다. 전체 OCR은 시간이 오래 걸릴 수 있습니다. 학습 시트를 해제한 상태에서 사용하세요.": {
+    "en": "Extraction runs on this device. Full-file OCR may take a long time. Turn off the study sheet before extracting.",
+    "ja": "抽出はこの端末内で実行します。全体のOCRには時間がかかる場合があります。学習シートをオフにして使用してください。"
+  },
+  "대상 {count}페이지 · 원문 텍스트 우선. 이미지·스캔 OCR은 오래 걸릴 수 있으며 한 페이지씩 처리합니다. 인식 언어를 지정하면 반복 언어 추정을 줄일 수 있습니다.": {
+    "en": "{count} pages · Uses embedded text first. Image/scanned pages are processed one at a time with OCR, which may take a long time. Set a recognition language to reduce repeated language detection.",
+    "ja": "対象 {count}ページ · 元のテキストを優先します。画像・スキャンのOCRは1ページずつ処理するため時間がかかる場合があります。認識言語を指定すると言語の推定処理を減らせます。"
+  },
+  "학습 시트를 해제한 뒤 텍스트를 추출하세요.": {
+    "en": "Turn off the study sheet before extracting text.",
+    "ja": "学習シートをオフにしてからテキストを抽出してください。"
+  },
+  "책이 변경되어 추출을 중단했습니다.": {
+    "en": "Extraction stopped because the book changed.",
+    "ja": "本が変更されたため抽出を中止しました。"
+  },
+  "이미지 파일이 너무 큽니다.": {
+    "en": "The image file is too large.",
+    "ja": "画像ファイルが大きすぎます。"
+  },
+  "이미지 해상도가 너무 큽니다.": {
+    "en": "The image resolution is too high.",
+    "ja": "画像の解像度が高すぎます。"
+  },
+  "본문이 너무 커서 추출을 중단했습니다.": {
+    "en": "Extraction stopped because the chapter is too large.",
+    "ja": "本文が大きすぎるため抽出を中止しました。"
+  },
+  "추출 중 · {done}/{total}페이지 · OCR {ocr}페이지 · {seconds}초": {
+    "en": "Extracting · {done}/{total} pages · OCR {ocr} pages · {seconds}s",
+    "ja": "抽出中 · {done}/{total}ページ · OCR {ocr}ページ · {seconds}秒"
+  },
+  "추출 취소 · 완료된 페이지의 결과만 표시합니다.": {
+    "en": "Extraction cancelled · showing completed pages only.",
+    "ja": "抽出をキャンセルしました · 完了したページの結果のみ表示します。"
+  },
+  "추출 중단: {reason}": {
+    "en": "Extraction stopped: {reason}",
+    "ja": "抽出を中止しました: {reason}"
+  },
+  "결과가 200만 자를 넘습니다.": {
+    "en": "The result exceeds two million characters.",
+    "ja": "結果が200万文字を超えています。"
+  },
+  "텍스트 추출 완료": {
+    "en": "Text extraction complete",
+    "ja": "テキスト抽出が完了しました"
+  },
+  "{done}/{total}페이지 · OCR {ocr} · 텍스트 없음 {empty} · {seconds}초": {
+    "en": "{done}/{total} pages · OCR {ocr} · No text {empty} · {seconds}s",
+    "ja": "{done}/{total}ページ · OCR {ocr} · テキストなし {empty} · {seconds}秒"
+  },
+  "미리보기는 5만 자까지 표시하며 복사·내보내기는 전체 결과를 사용합니다.": {
+    "en": "Preview shows up to 50,000 characters. Copy and export include the full result.",
+    "ja": "プレビューは5万文字まで表示します。コピーと書き出しには結果全体を使用します。"
+  },
+  "텍스트 추출 준비 중…": {
+    "en": "Preparing text extraction…",
+    "ja": "テキスト抽出を準備中…"
+  },
+  "복사하지 못했습니다. TXT 내보내기를 사용하세요.": {
+    "en": "Could not copy. Use Export TXT.",
+    "ja": "コピーできませんでした。TXT書き出しを使用してください。"
+  },
+  "텍스트 추출 표시": {
+    "en": "Show text extraction",
+    "ja": "テキスト抽出を表示"
+  },
+  "텍스트 추출 시작 시 펼침": {
+    "en": "Expand text extraction at startup",
+    "ja": "起動時にテキスト抽出を展開"
+  },
+  "텍스트 추출 위로": {
+    "en": "Move text extraction up",
+    "ja": "テキスト抽出を上へ移動"
+  },
+  "텍스트 추출 아래로": {
+    "en": "Move text extraction down",
+    "ja": "テキスト抽出を下へ移動"
+  },
+  "텍스트 추출 인식 언어": {
+    "en": "Text extraction recognition language",
+    "ja": "テキスト抽出の認識言語"
+  },
+  "현재 페이지 기준 · 텍스트 추출은 원문 우선, 텍스트 선택은 글자 드래그": {
+    "en": "Current page · Extraction uses embedded text first; text selection uses dragging",
+    "ja": "現在のページ · テキスト抽出は元のテキストを優先、テキスト選択は文字をドラッグ"
   }
 }

@@ -1,0 +1,5 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+let spawned=0,terminated=0,unloaded=0;
+class Worker{constructor(){spawned++}postMessage(data){queueMicrotask(()=>this.onmessage({data:{type:'result',text:'텍스트',writing:'korean'}}))}terminate(){terminated++}}
+const scope={Worker,createImageBitmap:async()=>({close(){}}),setTimeout,clearTimeout,DOMException,ModelStorage:{status:async()=>({ready:true})},BetaTranslation:{unload:async()=>unloaded++},KoreanSpacing:{correct:async text=>({text,original:text}),cancel(){}}};vm.createContext(scope);vm.runInContext(fs.readFileSync('public/highlight-ocr.js','utf8'),scope);
+(async()=>{const session=scope.HighlightOCR.createSession(),s={ocr:'paddle',writing:'korean'},signal=new AbortController().signal;await session.recognize({},s,signal);await session.recognize({},s,signal);assert.equal(spawned,1);assert.equal(terminated,0);assert.equal(unloaded,1);await session.close();assert.equal(terminated,1);await assert.rejects(session.recognize({},s,signal));console.log('여러 페이지에서 Paddle Worker 재사용·엔진 초기화 중복 방지·완료 후 메모리 해제 검사 통과');})().catch(e=>{console.error(e);process.exitCode=1});
